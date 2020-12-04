@@ -14,7 +14,7 @@ public class BallController : MonoBehaviour
 
 
         Rigidbody body = GetComponent<Rigidbody>();
-        body.AddTorque(new Vector3(xSpeed, 0, ySpeed));
+        body.AddTorque(new Vector3(xSpeed, 0, ySpeed) * ballSpeed * Time.deltaTime);//balance speed with FPS
         //
     }
 }

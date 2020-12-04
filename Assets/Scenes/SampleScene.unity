@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 312034b2e3c6d924ea91be0ec55301fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballSpeed: 3
+  ballSpeed: 300
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,7 +415,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.81, y: 0.76, z: -9.52}
+  m_LocalPosition: {x: 12.43, y: 3.4, z: -9.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -430,10 +430,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 312034b2e3c6d924ea91be0ec55301fe, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c86d62f748340042bb06790e75bcda1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballSpeed: 0
+  target: {fileID: 339131820}
+  xOffset: 5
+  yOffset: 5
+  zOffset: 0
 --- !u!1 &1120737026
 GameObject:
   m_ObjectHideFlags: 0
