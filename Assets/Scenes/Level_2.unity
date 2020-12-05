@@ -699,6 +699,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 7523385705195813520, guid: 3814cfbfd1b70ee4abbcd2f278cad220,
+        type: 3}
+      propertyPath: ballSpeed
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 7523385705195813523, guid: 3814cfbfd1b70ee4abbcd2f278cad220,
         type: 3}
       propertyPath: m_RootOrder
@@ -859,8 +864,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 807587208}
-  xOffset: 5
-  yOffset: 10
+  xOffset: 10
+  yOffset: 5
   zOffset: 0
 --- !u!1 &1183355326
 GameObject:
@@ -1262,7 +1267,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-13388
+  m_Name: pb_Mesh15442
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
