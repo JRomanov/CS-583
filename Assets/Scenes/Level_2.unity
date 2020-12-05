@@ -699,10 +699,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 7523385705195813519, guid: 3814cfbfd1b70ee4abbcd2f278cad220,
+        type: 3}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7523385705195813520, guid: 3814cfbfd1b70ee4abbcd2f278cad220,
         type: 3}
       propertyPath: ballSpeed
-      value: 500
+      value: 750
       objectReference: {fileID: 0}
     - target: {fileID: 7523385705195813523, guid: 3814cfbfd1b70ee4abbcd2f278cad220,
         type: 3}
