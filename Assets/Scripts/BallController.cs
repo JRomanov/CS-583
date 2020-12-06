@@ -6,7 +6,7 @@ public class BallController : MonoBehaviour
 {
     public float ballSpeed;
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //movement
         float xSpeed = Input.GetAxis("Horizontal");
@@ -14,7 +14,8 @@ public class BallController : MonoBehaviour
 
 
         Rigidbody body = GetComponent<Rigidbody>();
-        body.AddTorque(new Vector3(xSpeed, 0, ySpeed) * ballSpeed * Time.deltaTime);//balance speed with FPS
+        body.AddForce(Vector3.ClampMagnitude(new Vector3(-ySpeed, 0, xSpeed), 1f) * ballSpeed * Time.deltaTime, ForceMode.Acceleration);
+        body.AddTorque(Vector3.ClampMagnitude(new Vector3(xSpeed, 0, ySpeed), 1f) * ballSpeed * Time.deltaTime, ForceMode.Acceleration);//balance speed with FPS
         //
     }
 }
