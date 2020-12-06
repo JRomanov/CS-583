@@ -11,3 +11,9 @@ Code snippet to fix diagonal movement being too fast
 Author: slumtrimpet
 Posted: Jan 24, 2019
 https://forum.unity.com/threads/diagonal-movement-speed-to-fast.271703/
+
+Unity Moving Platform Tutorial
+Author: Jayanam
+Posted: Apr 18, 2018
+https://www.youtube.com/watch?v=rO19dA2jksk
+Methods to create moving platforms.
