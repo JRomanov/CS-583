@@ -17,6 +17,8 @@ public class BallController : MonoBehaviour
     public Button MenuButton;
     public Button QuitButton;
     public AudioSource igMusic;
+    public float timeRemaining;
+    public Text timer;
 
     public Vector3 checkPoint;
 
@@ -45,6 +47,7 @@ public class BallController : MonoBehaviour
             ResumeButton.onClick.AddListener(() => ResumeGame());
             Paused = false;
             pauseMenu.SetActive(false);
+            timer = GameObject.FindGameObjectWithTag("TimerText").GetComponent<Text>();
         }
         else
         {
@@ -58,6 +61,17 @@ public class BallController : MonoBehaviour
     }
     private void Update()
     {
+        //if the game isnt paused, countdown on time remaining
+        if (!Paused && timeRemaining > 0.0001f)
+        {
+            timeRemaining -= Time.deltaTime;
+            timer.text = "0" + Mathf.FloorToInt(timeRemaining / 60).ToString() + " : " + Mathf.FloorToInt(timeRemaining % 60).ToString();
+        }
+        else if (timeRemaining == 0)
+        {
+            //ran out of time --> Load Lose screen
+            Scene_Manager.LoadScene(6);
+        }
         //PauseMenu Functionality
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -89,13 +103,20 @@ public class BallController : MonoBehaviour
 
         if (level == 3)
         {
-            ball.transform.position = new Vector3(135, 33, -2); ;
+            ball.transform.position = new Vector3(135, 33, -2);
+            timeRemaining = 180f;
         }
         if (level == 4)
         {
             //ball.transform.position = new Vector3(-8, -3f, 0);
 
         }
+        if (level == 5)
+        {
+            //ball.transform.position = new Vector3(-8, -3f, 0);
+
+        }
+
     }
 
     //collectables/Boosters

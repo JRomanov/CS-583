@@ -13,6 +13,7 @@ TagManager:
   - PauseMenu
   - ResumeButton
   - ButtonPress
+  - TimerText
   layers:
   - Default
   - TransparentFX
