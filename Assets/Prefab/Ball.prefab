@@ -934,7 +934,7 @@ GameObject:
   - component: {fileID: 7523385705195813519}
   m_Layer: 0
   m_Name: Ball
-  m_TagString: Untagged
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -977,6 +977,7 @@ MonoBehaviour:
   igMusic: {fileID: 0}
   timeRemaining: 0
   timer: {fileID: 0}
+  temp: 0
   checkPoint: {x: 0, y: 0, z: 0}
 --- !u!33 &7523385705195813522
 MeshFilter:
