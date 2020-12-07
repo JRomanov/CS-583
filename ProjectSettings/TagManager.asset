@@ -9,6 +9,7 @@ TagManager:
   - BackButton
   - QuitButton
   - StartButton
+  - Restart
   layers:
   - Default
   - TransparentFX

@@ -19139,7 +19139,7 @@ GameObject:
   - component: {fileID: 1763240638}
   m_Layer: 0
   m_Name: deffTrigger
-  m_TagString: Respawn
+  m_TagString: Restart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19212,13 +19212,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1763240637}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.34, y: -45.3, z: -2.1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.09227585, w: 0.9957335}
+  m_LocalPosition: {x: 28.7, y: -8.6, z: -2.1}
   m_LocalScale: {x: 38.19351, y: 0.9999989, z: 13.532949}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 10.589001}
 --- !u!1 &1773131193
 GameObject:
   m_ObjectHideFlags: 0
@@ -22270,6 +22270,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 7523385705195813518, guid: 3814cfbfd1b70ee4abbcd2f278cad220,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7523385705195813519, guid: 3814cfbfd1b70ee4abbcd2f278cad220,
         type: 3}
       propertyPath: m_AngularDrag
@@ -22298,7 +22303,7 @@ PrefabInstance:
     - target: {fileID: 7523385705195813523, guid: 3814cfbfd1b70ee4abbcd2f278cad220,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 32.5
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 7523385705195813523, guid: 3814cfbfd1b70ee4abbcd2f278cad220,
         type: 3}
