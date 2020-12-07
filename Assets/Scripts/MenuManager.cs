@@ -10,6 +10,11 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void LevelOne()
+    {
+        SceneManager.LoadScene(2);
+    }
+
     public void QuitGame()
     {
         Debug.Log("QUITTING");
