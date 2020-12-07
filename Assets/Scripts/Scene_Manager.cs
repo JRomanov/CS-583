@@ -2,10 +2,118 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Scene_Manager : MonoBehaviour
 {
-   public void PlayGame()
+    private Button Play;
+    private Button About;
+    private Button Back;
+    private Button Quit;
+    private Button Start;
+    public AudioSource menuMusic;
+    public bool musicPlaying;
+
+    public static GameObject BallInst;
+    public static Scene_Manager Instance { get; private set; }
+    public void Awake()
+    {
+        if (Instance == null)
+        {
+            DontDestroyOnLoad(this);
+            Instance = this;
+
+            //Initial Link of Main Menu Buttons
+            Play = GameObject.FindGameObjectWithTag("PlayButton").GetComponent<Button>();
+            Play.onClick.AddListener(() => LoadScene(2));
+            About = GameObject.FindGameObjectWithTag("AboutButton").GetComponent<Button>();
+            About.onClick.AddListener(() => LoadScene(1));
+            Back = GameObject.FindGameObjectWithTag("BackButton").GetComponent<Button>();
+            Back.onClick.AddListener(() => LoadScene(0));
+            Quit = GameObject.FindGameObjectWithTag("QuitButton").GetComponent<Button>();
+            Quit.onClick.AddListener(() => Game_Quit());
+            menuMusic = GetComponent<AudioSource>();
+            menuMusic.Play();
+            /*
+            click = GameObject.FindGameObjectWithTag("Click").GetComponent<AudioSource>();
+            musicPlaying = true;
+            */
+        }
+        else
+        {
+            //stop all other versions of this game object
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        //MainMenu
+        if (level == 0)
+        {
+            //only replay the music loop if coming from Play Game scenes
+            if (musicPlaying == false)
+            {
+                menuMusic.Play();
+            }
+            Play = GameObject.FindGameObjectWithTag("PlayButton").GetComponent<Button>();
+            Play.onClick.AddListener(() => LoadScene(2));
+            About = GameObject.FindGameObjectWithTag("AboutButton").GetComponent<Button>();
+            About.onClick.AddListener(() => LoadScene(1));
+            Quit = GameObject.FindGameObjectWithTag("QuitButton").GetComponent<Button>();
+            Quit.onClick.AddListener(() => Game_Quit());
+            Destroy(BallInst);
+        }
+        //About
+        if (level == 1)
+        {
+            musicPlaying = true;
+            Back = GameObject.FindGameObjectWithTag("BackButton").GetComponent<Button>();
+            Back.onClick.AddListener(() => LoadScene(0));
+        }
+        //Pre Game Screen
+        if (level == 2)
+        {
+            musicPlaying = true;
+            Start = GameObject.FindGameObjectWithTag("StartButton").GetComponent<Button>();
+            Start.onClick.AddListener(() => LoadScene(3));
+            Back = GameObject.FindGameObjectWithTag("BackButton").GetComponent<Button>();
+            Back.onClick.AddListener(() => LoadScene(0));
+        }
+        //PlayGame/Level 1
+        if (level == 3)
+        {
+            menuMusic.Stop();
+            musicPlaying = false;
+            BallInst = GameObject.FindGameObjectWithTag("Player1");
+        }
+        //Level 2
+        if (level == 4)
+        {
+
+        }
+        //Level 3
+        if (level == 5)
+        {
+
+        }
+        //Game Over
+        if (level == 6)
+        {
+            Back = GameObject.FindGameObjectWithTag("BackButton").GetComponent<Button>();
+            Back.onClick.AddListener(() => LoadScene(0));
+            Play = GameObject.FindGameObjectWithTag("PlayButton").GetComponent<Button>();
+            Play.onClick.AddListener(() => LoadScene(3));
+            //If player is dead, destory the current singleton player so they can restart
+            Destroy(BallInst);
+        }
+        //player wins
+        if (level == 7)
+        {
+            Destroy(BallInst.GetComponent<SpriteRenderer>());
+        }
+    }
+    public void PlayGame()
     {
         SceneManager.LoadScene(1);
     }
@@ -15,9 +123,19 @@ public class Scene_Manager : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
-    public void QuitGame()
+    public static void LoadScene(int sceneIndex)
     {
-        Debug.Log("QUITTING");
+        //click.Play();
+        SceneManager.LoadScene(sceneIndex);
+    }
+    //Quit application and debug for Unity Editor awareness
+    public void Game_Quit()
+    {
+        Debug.Log("Quitting game.");
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
         Application.Quit();
+#endif
     }
 }
