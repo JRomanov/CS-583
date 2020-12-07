@@ -65,9 +65,9 @@ public class BallController : MonoBehaviour
         if (!Paused && timeRemaining > 0.0001f)
         {
             timeRemaining -= Time.deltaTime;
-            timer.text = "0" + Mathf.FloorToInt(timeRemaining / 60).ToString() + " : " + Mathf.FloorToInt(timeRemaining % 60).ToString();
+            timer.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(timeRemaining / 60), Mathf.FloorToInt(timeRemaining % 60));
         }
-        else if (timeRemaining == 0)
+        else if (timeRemaining <= 0)
         {
             //ran out of time --> Load Lose screen
             Scene_Manager.LoadScene(6);
@@ -104,7 +104,7 @@ public class BallController : MonoBehaviour
         if (level == 3)
         {
             ball.transform.position = new Vector3(135, 33, -2);
-            timeRemaining = 180f;
+            timeRemaining = 12f;
         }
         if (level == 4)
         {

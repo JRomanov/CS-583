@@ -103,6 +103,8 @@ public class Scene_Manager : MonoBehaviour
             Back.onClick.AddListener(() => LoadScene(0));
             Play = GameObject.FindGameObjectWithTag("PlayButton").GetComponent<Button>();
             Play.onClick.AddListener(() => LoadScene(3));
+            Quit = GameObject.FindGameObjectWithTag("QuitButton").GetComponent<Button>();
+            Quit.onClick.AddListener(() => Game_Quit());
             //If player is dead, destory the current singleton player so they can restart
             Destroy(BallInst);
         }
