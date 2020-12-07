@@ -35,14 +35,15 @@ public class BallController : MonoBehaviour
             //Level 1 starting position
             checkPoint = new Vector3(135, 33, -2);
 
-            igMusic = GameObject.FindGameObjectWithTag("InGameMusic").GetComponent<AudioSource>();
+            //igMusic = GameObject.FindGameObjectWithTag("InGameMusic").GetComponent<AudioSource>();
             pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
             MenuButton = GameObject.FindGameObjectWithTag("BackButton").GetComponent<Button>();
             MenuButton.onClick.AddListener(() => mainMenu());
             QuitButton = GameObject.FindGameObjectWithTag("QuitButton").GetComponent<Button>();
             QuitButton.onClick.AddListener(() => Scene_Manager.Game_Quit());
-            ResumeButton = GameObject.FindGameObjectWithTag("Resume").GetComponent<Button>();
+            ResumeButton = GameObject.FindGameObjectWithTag("ResumeButton").GetComponent<Button>();
             ResumeButton.onClick.AddListener(() => ResumeGame());
+            Paused = false;
             pauseMenu.SetActive(false);
         }
         else
@@ -55,18 +56,8 @@ public class BallController : MonoBehaviour
     {
 
     }
-
-    void FixedUpdate()
+    private void Update()
     {
-        //movement
-        float xSpeed = Input.GetAxis("Horizontal");
-        float ySpeed = Input.GetAxis("Vertical");
-
-        ballRB.AddForce(Vector3.ClampMagnitude(new Vector3(-ySpeed, 0, xSpeed), 1f) * ballSpeed * Time.deltaTime, ForceMode.Acceleration);
-
-        //Balance speed with FPS
-        ballRB.AddTorque(Vector3.ClampMagnitude(new Vector3(xSpeed, 0, ySpeed), 1f) * ballSpeed * Time.deltaTime, ForceMode.Acceleration);
-        
         //PauseMenu Functionality
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -79,6 +70,17 @@ public class BallController : MonoBehaviour
                 PauseGame();
             }
         }
+    }
+    void FixedUpdate()
+    {
+        //movement
+        float xSpeed = Input.GetAxis("Horizontal");
+        float ySpeed = Input.GetAxis("Vertical");
+
+        ballRB.AddForce(Vector3.ClampMagnitude(new Vector3(-ySpeed, 0, xSpeed), 1f) * ballSpeed * Time.deltaTime, ForceMode.Acceleration);
+
+        //Balance speed with FPS
+        ballRB.AddTorque(Vector3.ClampMagnitude(new Vector3(xSpeed, 0, ySpeed), 1f) * ballSpeed * Time.deltaTime, ForceMode.Acceleration);
     }
     
     //Set new checkpoint/reset timers/Add extra time
@@ -116,7 +118,7 @@ public class BallController : MonoBehaviour
     {
         Scene_Manager.ButtonPress.Play();
         pauseMenu.SetActive(false);
-        igMusic.mute = false;
+        //igMusic.mute = false;
         Time.timeScale = 1f;
         Paused = false;
 
@@ -125,7 +127,7 @@ public class BallController : MonoBehaviour
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
-        igMusic.mute = true;
+        //igMusic.mute = true;
         Time.timeScale = 0f;
         Paused = true;
     }

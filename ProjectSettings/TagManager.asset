@@ -12,6 +12,7 @@ TagManager:
   - Restart
   - PauseMenu
   - ResumeButton
+  - ButtonPress
   layers:
   - Default
   - TransparentFX

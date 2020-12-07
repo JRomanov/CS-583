@@ -29,15 +29,12 @@ public class Scene_Manager : MonoBehaviour
             Play.onClick.AddListener(() => LoadScene(2));
             About = GameObject.FindGameObjectWithTag("AboutButton").GetComponent<Button>();
             About.onClick.AddListener(() => LoadScene(1));
-            Back = GameObject.FindGameObjectWithTag("BackButton").GetComponent<Button>();
-            Back.onClick.AddListener(() => LoadScene(0));
             Quit = GameObject.FindGameObjectWithTag("QuitButton").GetComponent<Button>();
             Quit.onClick.AddListener(() => Game_Quit());
-            menuMusic = GetComponent<AudioSource>();
-            menuMusic.Play();
+            //menuMusic = GetComponent<AudioSource>();
+            //menuMusic.Play();
             ButtonPress = GameObject.FindGameObjectWithTag("ButtonPress").GetComponent<AudioSource>();
             /*
-            click = GameObject.FindGameObjectWithTag("Click").GetComponent<AudioSource>();
             musicPlaying = true;
             */
         }
