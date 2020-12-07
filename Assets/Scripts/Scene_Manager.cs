@@ -12,6 +12,7 @@ public class Scene_Manager : MonoBehaviour
     private Button Quit;
     private Button Start;
     public AudioSource menuMusic;
+    public static AudioSource ButtonPress;
     public bool musicPlaying;
 
     public static GameObject BallInst;
@@ -34,6 +35,7 @@ public class Scene_Manager : MonoBehaviour
             Quit.onClick.AddListener(() => Game_Quit());
             menuMusic = GetComponent<AudioSource>();
             menuMusic.Play();
+            ButtonPress = GameObject.FindGameObjectWithTag("ButtonPress").GetComponent<AudioSource>();
             /*
             click = GameObject.FindGameObjectWithTag("Click").GetComponent<AudioSource>();
             musicPlaying = true;
@@ -116,11 +118,11 @@ public class Scene_Manager : MonoBehaviour
 
     public static void LoadScene(int sceneIndex)
     {
-        //click.Play();
+        ButtonPress.Play();
         SceneManager.LoadScene(sceneIndex);
     }
     //Quit application and debug for Unity Editor awareness
-    public void Game_Quit()
+    public static void Game_Quit()
     {
         Debug.Log("Quitting game.");
 #if UNITY_EDITOR
