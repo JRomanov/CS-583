@@ -110,7 +110,7 @@ public class Scene_Manager : MonoBehaviour
         //player wins
         if (level == 7)
         {
-            Destroy(BallInst.GetComponent<SpriteRenderer>());
+
         }
     }
 
