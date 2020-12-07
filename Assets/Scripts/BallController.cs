@@ -5,7 +5,13 @@ using UnityEngine;
 public class BallController : MonoBehaviour
 {
     public float ballSpeed;
-    // Update is called once per frame
+    private Rigidbody body;
+
+    void Start()
+    {
+        body = GetComponent<Rigidbody>();
+    }
+
     void FixedUpdate()
     {
         //movement
@@ -13,9 +19,8 @@ public class BallController : MonoBehaviour
         float ySpeed = Input.GetAxis("Vertical");
 
 
-        Rigidbody body = GetComponent<Rigidbody>();
         body.AddForce(Vector3.ClampMagnitude(new Vector3(-ySpeed, 0, xSpeed), 1f) * ballSpeed * Time.deltaTime, ForceMode.Acceleration);
         body.AddTorque(Vector3.ClampMagnitude(new Vector3(xSpeed, 0, ySpeed), 1f) * ballSpeed * Time.deltaTime, ForceMode.Acceleration);//balance speed with FPS
-        //
+        
     }
 }
