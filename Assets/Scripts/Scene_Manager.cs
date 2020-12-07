@@ -113,15 +113,6 @@ public class Scene_Manager : MonoBehaviour
             Destroy(BallInst.GetComponent<SpriteRenderer>());
         }
     }
-    public void PlayGame()
-    {
-        SceneManager.LoadScene(1);
-    }
-
-    public void LevelOne()
-    {
-        SceneManager.LoadScene(2);
-    }
 
     public static void LoadScene(int sceneIndex)
     {
