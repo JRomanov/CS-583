@@ -12107,7 +12107,7 @@ GameObject:
   - component: {fileID: 1063708249}
   m_Layer: 0
   m_Name: Arch
-  m_TagString: NextLevel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13320,7 +13320,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh309240
+  m_Name: pb_Mesh78802
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
