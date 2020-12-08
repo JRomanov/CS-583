@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8359030276178753862}
   m_Layer: 0
   m_Name: Torus
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13899,7 +13899,7 @@ GameObject:
   - component: {fileID: 8359030277508289418}
   m_Layer: 0
   m_Name: Torus (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
