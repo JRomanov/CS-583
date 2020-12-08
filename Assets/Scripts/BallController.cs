@@ -23,6 +23,11 @@ public class BallController : MonoBehaviour
     public int curLvl;
     public Vector3 checkPoint;
 
+    public float lvl1;
+    public float lvl2;
+    public float lvl3;
+
+
     public static BallController Instance { get; private set; }
     public void Awake()
     {
@@ -97,19 +102,25 @@ public class BallController : MonoBehaviour
 
         if (level == 3)
         {
-            ball.transform.position = new Vector3(.65f, 1f, .5f);
-            timeRemaining = 120f;
+            checkPoint = new Vector3(.65f, 1f, .5f);
+            ball.transform.position = checkPoint;
+            timeRemaining = 60f;
             curLvl = 3;
         }
         if (level == 4)
         {
-            //ball.transform.position = new Vector3(-8, -3f, 0);
+            lvl1 = timeRemaining;
+            checkPoint = new Vector3(2.5f, 2f, -2.5f);
+            ball.transform.position = checkPoint;
+            timeRemaining = 120f + lvl1;
             curLvl = 4;
         }
         if (level == 5)
         {
-            ball.transform.position = new Vector3(135, 33, -2);
-            timeRemaining = 120f;
+            lvl2 = timeRemaining;
+            checkPoint = new Vector3(135, 33, -2);
+            ball.transform.position = checkPoint;
+            timeRemaining = 120f + lvl2;
             curLvl = 5;
         }
 
@@ -131,6 +142,7 @@ public class BallController : MonoBehaviour
         }
         if(collision.gameObject.tag == "NextLevel")
         {
+
             curLvl++;
             Scene_Manager.LoadScene(curLvl);
         }

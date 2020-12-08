@@ -3178,12 +3178,6 @@ Transform:
   m_Father: {fileID: 564204079}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &339131820 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7523385705195813518, guid: 3814cfbfd1b70ee4abbcd2f278cad220,
-    type: 3}
-  m_PrefabInstance: {fileID: 7523385704991426338}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &404449686
 GameObject:
   m_ObjectHideFlags: 0
@@ -10387,10 +10381,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c86d62f748340042bb06790e75bcda1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 339131820}
   xOffset: 5
   yOffset: 5
   zOffset: 0
+  Player: {fileID: 0}
 --- !u!43 &980389515
 Mesh:
   m_ObjectHideFlags: 0
@@ -11949,7 +11943,7 @@ GameObject:
   - component: {fileID: 1063708249}
   m_Layer: 0
   m_Name: Arch
-  m_TagString: Untagged
+  m_TagString: NextLevel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12851,7 +12845,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh53104
+  m_Name: pb_Mesh309240
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
