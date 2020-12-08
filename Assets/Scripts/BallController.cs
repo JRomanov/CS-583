@@ -16,6 +16,8 @@ public class BallController : MonoBehaviour
     public Button ResumeButton;
     public Button MenuButton;
     public Button QuitButton;
+    public Button CreditsButton;
+    public Button Restart;
     public AudioSource igMusic;
     public float timeRemaining;
     public Text timer;
@@ -59,9 +61,9 @@ public class BallController : MonoBehaviour
             pauseMenu.SetActive(false);
             timer = GameObject.FindGameObjectWithTag("TimerText").GetComponent<Text>();
             fallText = GameObject.FindGameObjectWithTag("FallCtr").GetComponent<Text>();
-            ExtraTime1 = GameObject.FindGameObjectWithTag("Extratime1").GetComponent<Text>();
-            ExtraTime2 = GameObject.FindGameObjectWithTag("Extratime2").GetComponent<Text>();
-            ExtraTime3 = GameObject.FindGameObjectWithTag("Extratime3").GetComponent<Text>();
+            ExtraTime1 = GameObject.FindGameObjectWithTag("ExtraTime1").GetComponent<Text>();
+            ExtraTime2 = GameObject.FindGameObjectWithTag("ExtraTime2").GetComponent<Text>();
+            ExtraTime3 = GameObject.FindGameObjectWithTag("ExtraTime3").GetComponent<Text>();
         }
         else
         {
@@ -69,10 +71,7 @@ public class BallController : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-    void Start()
-    {
 
-    }
     private void Update()
     {   
         if (!Paused)
@@ -137,6 +136,10 @@ public class BallController : MonoBehaviour
         }
         if (level == 7)
         {
+            CreditsButton = GameObject.FindGameObjectWithTag("Continue").GetComponent<Button>();
+            CreditsButton.onClick.AddListener(() => Scene_Manager.LoadScene(8));
+            Restart = GameObject.FindGameObjectWithTag("Restart").GetComponent<Button>();
+            Restart.onClick.AddListener(() => Scene_Manager.LoadScene(3));
             lvl3 = timeRemaining;
             ExtraTime3.text = string.Format("+ {0:00}:{1:00}", Mathf.FloorToInt(lvl3 / 60), Mathf.FloorToInt(lvl3 % 60));
             //create stats display UI here
