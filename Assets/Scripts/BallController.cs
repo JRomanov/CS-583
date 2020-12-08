@@ -20,7 +20,7 @@ public class BallController : MonoBehaviour
     public float timeRemaining;
     public Text timer;
     public float temp;
-
+    public int curLvl;
     public Vector3 checkPoint;
 
     public static BallController Instance { get; private set; }
@@ -36,7 +36,7 @@ public class BallController : MonoBehaviour
             ballCol = GetComponent<Collider>();
 
             //Level 1 starting position
-            checkPoint = new Vector3(135, 33, -2);
+            checkPoint = new Vector3(.65f, 1f, .5f);
 
             //igMusic = GameObject.FindGameObjectWithTag("InGameMusic").GetComponent<AudioSource>();
             pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
@@ -97,24 +97,26 @@ public class BallController : MonoBehaviour
 
         if (level == 3)
         {
-            ball.transform.position = new Vector3(135, 33, -2);
+            ball.transform.position = new Vector3(.65f, 1f, .5f);
             timeRemaining = 120f;
+            curLvl = 3;
         }
         if (level == 4)
         {
             //ball.transform.position = new Vector3(-8, -3f, 0);
-
+            curLvl = 4;
         }
         if (level == 5)
         {
-            //ball.transform.position = new Vector3(-8, -3f, 0);
-
+            ball.transform.position = new Vector3(135, 33, -2);
+            timeRemaining = 120f;
+            curLvl = 5;
         }
 
     }
 
     //collectables/Boosters
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider collision)
     {
 
     }
@@ -126,6 +128,11 @@ public class BallController : MonoBehaviour
         {
             ball.transform.position = checkPoint;
             ballRB.velocity = new Vector3(0, 0, 0);
+        }
+        if(collision.gameObject.tag == "NextLevel")
+        {
+            curLvl++;
+            Scene_Manager.LoadScene(curLvl);
         }
     }
 

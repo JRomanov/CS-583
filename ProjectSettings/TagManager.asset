@@ -15,6 +15,7 @@ TagManager:
   - ButtonPress
   - TimerText
   - Player1
+  - NextLevel
   layers:
   - Default
   - TransparentFX
