@@ -61,8 +61,11 @@ public class BallController : MonoBehaviour
 
     }
     private void Update()
-    {
-        timerCD();
+    {   
+        if (!Paused)
+        {
+            timerCD();
+        }
         //PauseMenu Functionality
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -154,7 +157,7 @@ public class BallController : MonoBehaviour
     public void timerCD()
     {
         //if the game isnt paused, countdown on time remaining
-        if (!Paused && timeRemaining > 0.05f)
+        if (timeRemaining > 0.05f)
         {
             timeRemaining -= Time.deltaTime;
             timer.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(timeRemaining / 60), Mathf.FloorToInt(timeRemaining % 60));
