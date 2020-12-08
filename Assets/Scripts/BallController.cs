@@ -19,6 +19,7 @@ public class BallController : MonoBehaviour
     public AudioSource igMusic;
     public float timeRemaining;
     public Text timer;
+    public Text fallText;
     public float temp;
     public int curLvl;
     public Vector3 checkPoint;
@@ -54,6 +55,7 @@ public class BallController : MonoBehaviour
             Paused = false;
             pauseMenu.SetActive(false);
             timer = GameObject.FindGameObjectWithTag("TimerText").GetComponent<Text>();
+            fallText = GameObject.FindGameObjectWithTag("FallCtr").GetComponent<Text>();
         }
         else
         {
@@ -110,6 +112,8 @@ public class BallController : MonoBehaviour
         if (level == 4)
         {
             lvl1 = timeRemaining;
+            GameObject.FindGameObjectWithTag("ExtraTime1").GetComponent<Text>().text = string.Format("+ {0:00}:{1:00}", Mathf.FloorToInt(timeRemaining / 60), Mathf.FloorToInt(timeRemaining % 60));
+
             checkPoint = new Vector3(2.5f, 2f, -2.5f);
             ball.transform.position = checkPoint;
             timeRemaining = 120f + lvl1;
@@ -118,6 +122,8 @@ public class BallController : MonoBehaviour
         if (level == 5)
         {
             lvl2 = timeRemaining;
+            GameObject.FindGameObjectWithTag("ExtraTime2").GetComponent<Text>().text = string.Format("+ {0:00}:{1:00}", Mathf.FloorToInt(timeRemaining / 60), Mathf.FloorToInt(timeRemaining % 60));
+
             checkPoint = new Vector3(135, 33, -2);
             ball.transform.position = checkPoint;
             timeRemaining = 120f + lvl2;
@@ -125,6 +131,8 @@ public class BallController : MonoBehaviour
         }
         if (level == 7)
         {
+            lvl3 = timeRemaining;
+            GameObject.FindGameObjectWithTag("ExtraTime3").GetComponent<Text>().text = string.Format("+ {0:00}:{1:00}", Mathf.FloorToInt(timeRemaining / 60), Mathf.FloorToInt(timeRemaining % 60));
             //create stats display UI here
         }
 
@@ -144,6 +152,7 @@ public class BallController : MonoBehaviour
             ball.transform.position = checkPoint;
             ballRB.velocity = new Vector3(0, 0, 0);
             fallCtr++;
+            fallText.text = fallCtr.ToString();
         }
         if(collision.gameObject.tag == "NextLevel")
         {

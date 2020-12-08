@@ -16,6 +16,10 @@ TagManager:
   - TimerText
   - Player1
   - NextLevel
+  - FallCtr
+  - ExtraTime1
+  - ExtraTime2
+  - ExtraTime3
   layers:
   - Default
   - TransparentFX
