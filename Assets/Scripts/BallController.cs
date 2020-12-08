@@ -65,6 +65,7 @@ public class BallController : MonoBehaviour
             ExtraTime1 = GameObject.FindGameObjectWithTag("ExtraTime1").GetComponent<Text>();
             ExtraTime2 = GameObject.FindGameObjectWithTag("ExtraTime2").GetComponent<Text>();
             ExtraTime3 = GameObject.FindGameObjectWithTag("ExtraTime3").GetComponent<Text>();
+            igMusic = GameObject.FindGameObjectWithTag("PlayerUI").GetComponent<AudioSource>();
         }
         else
         {
@@ -111,10 +112,14 @@ public class BallController : MonoBehaviour
 
         if (level == 3)
         {
+            ExtraTime1.text = "";
+            ExtraTime1.text = "";
+            ExtraTime1.text = "";
             checkPoint = new Vector3(.65f, 1f, .5f);
             ball.transform.position = checkPoint;
             timeRemaining = 60f;
             curLvl = 3;
+            igMusic.Play();
         }
         if (level == 4)
         {
@@ -135,7 +140,7 @@ public class BallController : MonoBehaviour
             ball.transform.position = checkPoint;
             timeRemaining = 120f + lvl2;
             curLvl = 5;
-        }
+        }   
         if (level == 7)
         {
             lvl3 = timeRemaining;
