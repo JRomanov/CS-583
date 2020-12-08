@@ -10,6 +10,9 @@ public class BallController : MonoBehaviour
     public GameObject ball;
     public Rigidbody ballRB;
     public Collider ballCol;
+    //knockback
+    private float hurtforce = 20f;
+    Vector3 knockBack;
 
     public GameObject pauseMenu;
     private bool Paused;
@@ -97,10 +100,11 @@ public class BallController : MonoBehaviour
         float xSpeed = Input.GetAxis("Horizontal");
         float ySpeed = Input.GetAxis("Vertical");
 
-        ballRB.AddForce(Vector3.ClampMagnitude(new Vector3(-ySpeed, 0, xSpeed), 1f) * ballSpeed * Time.deltaTime, ForceMode.Acceleration);
 
+        ballRB.AddForce(Vector3.ClampMagnitude(new Vector3(-ySpeed, 0, xSpeed), 1f) * ballSpeed * Time.deltaTime, ForceMode.Acceleration);
         //Balance speed with FPS
         ballRB.AddTorque(Vector3.ClampMagnitude(new Vector3(xSpeed, 0, ySpeed), 1f) * ballSpeed * Time.deltaTime, ForceMode.Acceleration);
+
     }
     
     //Set new checkpoint/reset timers/Add extra time
@@ -175,6 +179,23 @@ public class BallController : MonoBehaviour
                 Scene_Manager.LoadScene(curLvl);
             }
         }
+
+        //bouncy enemy knockback
+        if (collision.gameObject.tag == "Enemy")
+        {
+            knockBack = Vector3.forward * -10;
+            ballRB.AddForce(knockBack * 100);
+            /*ballRB.velocity = new Vector3(hurtforce, ballRB.velocity.y, -hurtforce);
+            if (collision.gameObject.transform.position.x > transform.position.x)
+            {
+                ballRB.velocity = new Vector3(hurtforce, ballRB.velocity.y, -hurtforce);
+            }
+            else
+            {
+                ballRB.velocity = new Vector3(-hurtforce, ballRB.velocity.y, hurtforce);
+            }*/
+        }
+
     }
 
     public void ResumeGame()

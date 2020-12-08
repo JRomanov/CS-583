@@ -21,6 +21,7 @@ TagManager:
   - ExtraTime2
   - ExtraTime3
   - Continue
+  - Enemy
   layers:
   - Default
   - TransparentFX
