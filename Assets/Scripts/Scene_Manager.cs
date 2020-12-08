@@ -125,6 +125,7 @@ public class Scene_Manager : MonoBehaviour
             Back = GameObject.FindGameObjectWithTag("BackButton").GetComponent<Button>();
             Back.onClick.AddListener(() => LoadScene(0));
         }
+    
     }
 
     public static void LoadScene(int sceneIndex)
