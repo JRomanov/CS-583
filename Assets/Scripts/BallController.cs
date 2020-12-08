@@ -65,7 +65,7 @@ public class BallController : MonoBehaviour
             ExtraTime1 = GameObject.FindGameObjectWithTag("ExtraTime1").GetComponent<Text>();
             ExtraTime2 = GameObject.FindGameObjectWithTag("ExtraTime2").GetComponent<Text>();
             ExtraTime3 = GameObject.FindGameObjectWithTag("ExtraTime3").GetComponent<Text>();
-            igMusic = GameObject.FindGameObjectWithTag("PlayerUI").GetComponent<AudioSource>();
+            igMusic = GameObject.FindGameObjectWithTag("igMusic").GetComponent<AudioSource>();
         }
         else
         {
@@ -85,6 +85,7 @@ public class BallController : MonoBehaviour
         {
             if (Paused)
             {
+
                 ResumeGame();
             }
             else
@@ -109,12 +110,16 @@ public class BallController : MonoBehaviour
     //Set new checkpoint/reset timers/Add extra time
     private void OnLevelWasLoaded(int level)
     {
-
+        if(level == 0)
+        {
+            igMusic.Stop();
+            Destroy(this.gameObject);
+        }
         if (level == 3)
         {
             ExtraTime1.text = "";
-            ExtraTime1.text = "";
-            ExtraTime1.text = "";
+            ExtraTime2.text = "";
+            ExtraTime3.text = "";
             checkPoint = new Vector3(.65f, 1f, .5f);
             ball.transform.position = checkPoint;
             timeRemaining = 60f;
@@ -146,6 +151,10 @@ public class BallController : MonoBehaviour
             lvl3 = timeRemaining;
             ExtraTime3.text = string.Format("+ {0:00}:{1:00}", Mathf.FloorToInt(lvl3 / 60), Mathf.FloorToInt(lvl3 % 60));
             //create stats display UI here
+        }
+        if(level == 8)
+        {
+            igMusic.Stop();
         }
 
     }
@@ -182,12 +191,8 @@ public class BallController : MonoBehaviour
         //bouncy enemy knockback
         if (collision.gameObject.tag == "Enemy")
         {
-            ball.transform.position = checkPoint;
-            ballRB.velocity = new Vector3(0, 0, 0);
-            fallCtr++;
-            fallText.text = fallCtr.ToString();
-            //knockBack = Vector3.forward * -10;
-            //ballRB.AddForce(knockBack * 100);
+            knockBack = Vector3.forward * -10;
+            ballRB.AddForce(knockBack * 100);
             /*ballRB.velocity = new Vector3(hurtforce, ballRB.velocity.y, -hurtforce);
             if (collision.gameObject.transform.position.x > transform.position.x)
             {
@@ -205,24 +210,26 @@ public class BallController : MonoBehaviour
     {
         Scene_Manager.ButtonPress.Play();
         pauseMenu.SetActive(false);
-        //igMusic.mute = false;
         Time.timeScale = 1f;
         Paused = false;
-
+        igMusic.mute = false;
     }
 
     public void PauseGame()
     {
+
         pauseMenu.SetActive(true);
-        //igMusic.mute = true;
         Time.timeScale = 0f;
         Paused = true;
+        igMusic.mute = true;
     }
 
     public void mainMenu()
     {
         pauseMenu.SetActive(false);
+        Paused = false;
         Time.timeScale = 1f;
+        igMusic.Stop();
         Scene_Manager.LoadScene(0);
     }
 

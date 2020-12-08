@@ -23,6 +23,8 @@ TagManager:
   - Continue
   - Enemy
   - CreditsCanvas
+  - PlayerUI
+  - igMusic
   layers:
   - Default
   - TransparentFX

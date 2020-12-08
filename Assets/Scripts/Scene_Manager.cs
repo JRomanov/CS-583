@@ -63,7 +63,7 @@ public class Scene_Manager : MonoBehaviour
             About = GameObject.FindGameObjectWithTag("AboutButton").GetComponent<Button>();
             About.onClick.AddListener(() => LoadScene(1));
             Quit = GameObject.FindGameObjectWithTag("QuitButton").GetComponent<Button>();
-            Quit.onClick.AddListener(() => Game_Quit());
+            Quit.onClick.AddListener(() => Game_Quit());       
             Destroy(BallInst);
         }
         //About
