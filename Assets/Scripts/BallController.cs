@@ -19,6 +19,7 @@ public class BallController : MonoBehaviour
     public AudioSource igMusic;
     public float timeRemaining;
     public Text timer;
+    public float temp;
 
     public Vector3 checkPoint;
 
@@ -30,7 +31,7 @@ public class BallController : MonoBehaviour
             DontDestroyOnLoad(this);
             Instance = this;
 
-            ball = GameObject.FindGameObjectWithTag("Player");
+            ball = GameObject.FindGameObjectWithTag("Player1");
             ballRB = GetComponent<Rigidbody>();
             ballCol = GetComponent<Collider>();
 
@@ -52,7 +53,7 @@ public class BallController : MonoBehaviour
         else
         {
             //stop all other versions of this game object
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
     void Start()
@@ -61,17 +62,7 @@ public class BallController : MonoBehaviour
     }
     private void Update()
     {
-        //if the game isnt paused, countdown on time remaining
-        if (!Paused && timeRemaining > 0.0001f)
-        {
-            timeRemaining -= Time.deltaTime;
-            timer.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(timeRemaining / 60), Mathf.FloorToInt(timeRemaining % 60));
-        }
-        else if (timeRemaining <= 0)
-        {
-            //ran out of time --> Load Lose screen
-            Scene_Manager.LoadScene(6);
-        }
+        timerCD();
         //PauseMenu Functionality
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -104,7 +95,7 @@ public class BallController : MonoBehaviour
         if (level == 3)
         {
             ball.transform.position = new Vector3(135, 33, -2);
-            timeRemaining = 12f;
+            timeRemaining = 120f;
         }
         if (level == 4)
         {
@@ -158,5 +149,21 @@ public class BallController : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         Scene_Manager.LoadScene(0);
+    }
+
+    public void timerCD()
+    {
+        //if the game isnt paused, countdown on time remaining
+        if (!Paused && timeRemaining > 0.05f)
+        {
+            timeRemaining -= Time.deltaTime;
+            timer.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(timeRemaining / 60), Mathf.FloorToInt(timeRemaining % 60));
+        }
+        else //if (timeRemaining <= 0.01f)
+        {
+            Destroy(this.gameObject);
+            //ran out of time --> Load Lose screen
+            Scene_Manager.LoadScene(6);
+        }
     }
 }

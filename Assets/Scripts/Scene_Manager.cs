@@ -15,7 +15,7 @@ public class Scene_Manager : MonoBehaviour
     public static AudioSource ButtonPress;
     public bool musicPlaying;
 
-    public static GameObject BallInst;
+    public GameObject BallInst;
     public static Scene_Manager Instance { get; private set; }
     public void Awake()
     {
@@ -41,7 +41,7 @@ public class Scene_Manager : MonoBehaviour
         else
         {
             //stop all other versions of this game object
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
 
@@ -106,7 +106,7 @@ public class Scene_Manager : MonoBehaviour
             Quit = GameObject.FindGameObjectWithTag("QuitButton").GetComponent<Button>();
             Quit.onClick.AddListener(() => Game_Quit());
             //If player is dead, destory the current singleton player so they can restart
-            Destroy(BallInst);
+            //Destroy(BallInst);
         }
         //player wins
         if (level == 7)
