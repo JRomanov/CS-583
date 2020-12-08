@@ -22,7 +22,7 @@ public class BallController : MonoBehaviour
     public float temp;
     public int curLvl;
     public Vector3 checkPoint;
-
+    private int fallCtr = 0;
     public float lvl1;
     public float lvl2;
     public float lvl3;
@@ -123,6 +123,10 @@ public class BallController : MonoBehaviour
             timeRemaining = 120f + lvl2;
             curLvl = 5;
         }
+        if (level == 7)
+        {
+            //create stats display UI here
+        }
 
     }
 
@@ -139,12 +143,19 @@ public class BallController : MonoBehaviour
         {
             ball.transform.position = checkPoint;
             ballRB.velocity = new Vector3(0, 0, 0);
+            fallCtr++;
         }
         if(collision.gameObject.tag == "NextLevel")
         {
-
-            curLvl++;
-            Scene_Manager.LoadScene(curLvl);
+            if (curLvl == 5)
+            {
+                Scene_Manager.LoadScene(7);
+            }
+            else
+            {
+                curLvl++;
+                Scene_Manager.LoadScene(curLvl);
+            }
         }
     }
 
