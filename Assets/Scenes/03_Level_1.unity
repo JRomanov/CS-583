@@ -1661,7 +1661,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52982
+  m_Name: pb_Mesh47332
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7988,10 +7988,8 @@ MonoBehaviour:
   m_Mesh: {fileID: 185406000}
   m_IsSelectable: 1
   m_SelectedFaces: 
-  m_SelectedEdges:
-  - a: 124
-    b: 125
-  m_SelectedVertices: 7c0000007d000000
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!4 &703842629
 Transform:
   m_ObjectHideFlags: 0
@@ -17267,7 +17265,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh53090
+  m_Name: pb_Mesh47440
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -17893,7 +17891,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1651308287}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 56.112267, y: -10.94202, z: 18.267862}
+  m_LocalPosition: {x: 56.112267, y: -10.94202, z: 18.26786}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1773131194}
