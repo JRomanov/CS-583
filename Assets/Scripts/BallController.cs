@@ -112,7 +112,7 @@ public class BallController : MonoBehaviour
         if (level == 4)
         {
             lvl1 = timeRemaining;
-            GameObject.FindGameObjectWithTag("ExtraTime1").GetComponent<Text>().text = string.Format("+ {0:00}:{1:00}", Mathf.FloorToInt(timeRemaining / 60), Mathf.FloorToInt(timeRemaining % 60));
+            GameObject.FindGameObjectWithTag("ExtraTime1").GetComponent<Text>().text = string.Format("+ {0:00}:{1:00}", Mathf.FloorToInt(lvl1 / 60), Mathf.FloorToInt(lvl1 % 60));
 
             checkPoint = new Vector3(2.5f, 2f, -2.5f);
             ball.transform.position = checkPoint;
@@ -122,7 +122,7 @@ public class BallController : MonoBehaviour
         if (level == 5)
         {
             lvl2 = timeRemaining;
-            GameObject.FindGameObjectWithTag("ExtraTime2").GetComponent<Text>().text = string.Format("+ {0:00}:{1:00}", Mathf.FloorToInt(timeRemaining / 60), Mathf.FloorToInt(timeRemaining % 60));
+            GameObject.FindGameObjectWithTag("ExtraTime2").GetComponent<Text>().text = string.Format("+ {0:00}:{1:00}", Mathf.FloorToInt(lvl2 / 60), Mathf.FloorToInt(lvl2 % 60));
 
             checkPoint = new Vector3(135, 33, -2);
             ball.transform.position = checkPoint;
@@ -132,7 +132,7 @@ public class BallController : MonoBehaviour
         if (level == 7)
         {
             lvl3 = timeRemaining;
-            GameObject.FindGameObjectWithTag("ExtraTime3").GetComponent<Text>().text = string.Format("+ {0:00}:{1:00}", Mathf.FloorToInt(timeRemaining / 60), Mathf.FloorToInt(timeRemaining % 60));
+            GameObject.FindGameObjectWithTag("ExtraTime3").GetComponent<Text>().text = string.Format("+ {0:00}:{1:00}", Mathf.FloorToInt(lvl3 / 60), Mathf.FloorToInt(lvl3 % 60));
             //create stats display UI here
         }
 
