@@ -113,6 +113,7 @@ public class Scene_Manager : MonoBehaviour
         {
 
         }
+    
     }
 
     public static void LoadScene(int sceneIndex)
