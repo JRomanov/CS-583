@@ -7,6 +7,15 @@ published: 02/13/2011
 https://opengameart.org/content/117-stone-wall-tilable-textures-in-8-themes?page=3
 City theme is used make the ball and ground materials.
 
+Image 2-
+Name: 50 free textures 5 - with normalmaps
+Author: rubberduck
+published: 08/10/2014
+https://opengameart.org/content/50-free-textures-5-with-normalmaps?page=2
+used on bouncy enemy
+
+----------------------
+
 Code snippet to fix diagonal movement being too fast
 Author: slumtrimpet
 Posted: Jan 24, 2019
