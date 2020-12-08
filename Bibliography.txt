@@ -13,6 +13,7 @@ Author: rubberduck
 published: 08/10/2014
 https://opengameart.org/content/50-free-textures-5-with-normalmaps?page=2
 used on bouncy enemy
+233,241,242,243 are used to texturize level 3
 
 ----------------------
 
