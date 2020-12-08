@@ -20,6 +20,9 @@ public class BallController : MonoBehaviour
     public float timeRemaining;
     public Text timer;
     public Text fallText;
+    public Text ExtraTime1;
+    public Text ExtraTime2;
+    public Text ExtraTime3;
     public float temp;
     public int curLvl;
     public Vector3 checkPoint;
@@ -56,6 +59,9 @@ public class BallController : MonoBehaviour
             pauseMenu.SetActive(false);
             timer = GameObject.FindGameObjectWithTag("TimerText").GetComponent<Text>();
             fallText = GameObject.FindGameObjectWithTag("FallCtr").GetComponent<Text>();
+            ExtraTime1 = GameObject.FindGameObjectWithTag("Extratime1").GetComponent<Text>();
+            ExtraTime2 = GameObject.FindGameObjectWithTag("Extratime2").GetComponent<Text>();
+            ExtraTime3 = GameObject.FindGameObjectWithTag("Extratime3").GetComponent<Text>();
         }
         else
         {
@@ -112,7 +118,7 @@ public class BallController : MonoBehaviour
         if (level == 4)
         {
             lvl1 = timeRemaining;
-            GameObject.FindGameObjectWithTag("ExtraTime1").GetComponent<Text>().text = string.Format("+ {0:00}:{1:00}", Mathf.FloorToInt(lvl1 / 60), Mathf.FloorToInt(lvl1 % 60));
+            ExtraTime1.text = string.Format("+ {0:00}:{1:00}", Mathf.FloorToInt(lvl1 / 60), Mathf.FloorToInt(lvl1 % 60));
 
             checkPoint = new Vector3(2.5f, 2f, -2.5f);
             ball.transform.position = checkPoint;
@@ -122,7 +128,7 @@ public class BallController : MonoBehaviour
         if (level == 5)
         {
             lvl2 = timeRemaining;
-            GameObject.FindGameObjectWithTag("ExtraTime2").GetComponent<Text>().text = string.Format("+ {0:00}:{1:00}", Mathf.FloorToInt(lvl2 / 60), Mathf.FloorToInt(lvl2 % 60));
+            ExtraTime2.text = string.Format("+ {0:00}:{1:00}", Mathf.FloorToInt(lvl2 / 60), Mathf.FloorToInt(lvl2 % 60));
 
             checkPoint = new Vector3(135, 33, -2);
             ball.transform.position = checkPoint;
@@ -132,7 +138,7 @@ public class BallController : MonoBehaviour
         if (level == 7)
         {
             lvl3 = timeRemaining;
-            GameObject.FindGameObjectWithTag("ExtraTime3").GetComponent<Text>().text = string.Format("+ {0:00}:{1:00}", Mathf.FloorToInt(lvl3 / 60), Mathf.FloorToInt(lvl3 % 60));
+            ExtraTime3.text = string.Format("+ {0:00}:{1:00}", Mathf.FloorToInt(lvl3 / 60), Mathf.FloorToInt(lvl3 % 60));
             //create stats display UI here
         }
 
