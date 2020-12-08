@@ -22,6 +22,7 @@ TagManager:
   - ExtraTime3
   - Continue
   - Enemy
+  - CreditsCanvas
   layers:
   - Default
   - TransparentFX
