@@ -95,7 +95,7 @@ public class BallController : MonoBehaviour
         if (level == 3)
         {
             ball.transform.position = new Vector3(135, 33, -2);
-            timeRemaining = 12f;
+            timeRemaining = 120f;
         }
         if (level == 4)
         {
