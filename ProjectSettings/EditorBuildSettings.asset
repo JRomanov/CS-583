@@ -15,11 +15,11 @@ EditorBuildSettings:
     path: Assets/Scenes/02_PlayMenu.unity
     guid: 8010941a2bc90314e907a98e7ed73349
   - enabled: 1
-    path: Assets/Scenes/03_Level_1.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
     path: Assets/Scenes/04_Level_2.unity
     guid: 8e88a97c8ed0a1344b23cd65e070f0db
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/05_Level_3.unity
     guid: bc187297a2ed2e241bbf9b77f12d27d4
