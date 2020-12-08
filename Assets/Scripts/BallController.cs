@@ -19,8 +19,6 @@ public class BallController : MonoBehaviour
     public Button ResumeButton;
     public Button MenuButton;
     public Button QuitButton;
-    public Button CreditsButton;
-    public Button Restart;
     public AudioSource igMusic;
     public float timeRemaining;
     public Text timer;
@@ -140,10 +138,6 @@ public class BallController : MonoBehaviour
         }
         if (level == 7)
         {
-            CreditsButton = GameObject.FindGameObjectWithTag("Continue").GetComponent<Button>();
-            CreditsButton.onClick.AddListener(() => Scene_Manager.LoadScene(8));
-            Restart = GameObject.FindGameObjectWithTag("Restart").GetComponent<Button>();
-            Restart.onClick.AddListener(() => Scene_Manager.LoadScene(3));
             lvl3 = timeRemaining;
             ExtraTime3.text = string.Format("+ {0:00}:{1:00}", Mathf.FloorToInt(lvl3 / 60), Mathf.FloorToInt(lvl3 % 60));
             //create stats display UI here

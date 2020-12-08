@@ -11,7 +11,10 @@ public class Scene_Manager : MonoBehaviour
     private Button Back;
     private Button Quit;
     private Button Start;
+    public Button CreditsButton;
+    public Button Restart;
     public AudioSource menuMusic;
+    public AudioSource creditsMusic;
     public static AudioSource ButtonPress;
     public bool musicPlaying;
 
@@ -105,13 +108,22 @@ public class Scene_Manager : MonoBehaviour
             Play.onClick.AddListener(() => LoadScene(3));
             Quit = GameObject.FindGameObjectWithTag("QuitButton").GetComponent<Button>();
             Quit.onClick.AddListener(() => Game_Quit());
-            //If player is dead, destory the current singleton player so they can restart
-            //Destroy(BallInst);
         }
         //player wins
         if (level == 7)
         {
-
+            CreditsButton = GameObject.FindGameObjectWithTag("Continue").GetComponent<Button>();
+            CreditsButton.onClick.AddListener(() => LoadScene(8));
+            Restart = GameObject.FindGameObjectWithTag("Restart").GetComponent<Button>();
+            Restart.onClick.AddListener(() => LoadScene(3));
+        }
+        //credits screen
+        if (level == 8)
+        {
+            creditsMusic = GameObject.FindGameObjectWithTag("CreditsCanvas").GetComponent<AudioSource>();
+            creditsMusic.Play();
+            Back = GameObject.FindGameObjectWithTag("BackButton").GetComponent<Button>();
+            Back.onClick.AddListener(() => LoadScene(0));
         }
     }
 
