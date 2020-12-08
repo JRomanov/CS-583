@@ -182,8 +182,12 @@ public class BallController : MonoBehaviour
         //bouncy enemy knockback
         if (collision.gameObject.tag == "Enemy")
         {
-            knockBack = Vector3.forward * -10;
-            ballRB.AddForce(knockBack * 100);
+            ball.transform.position = checkPoint;
+            ballRB.velocity = new Vector3(0, 0, 0);
+            fallCtr++;
+            fallText.text = fallCtr.ToString();
+            //knockBack = Vector3.forward * -10;
+            //ballRB.AddForce(knockBack * 100);
             /*ballRB.velocity = new Vector3(hurtforce, ballRB.velocity.y, -hurtforce);
             if (collision.gameObject.transform.position.x > transform.position.x)
             {
