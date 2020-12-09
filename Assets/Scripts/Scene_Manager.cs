@@ -18,6 +18,20 @@ public class Scene_Manager : MonoBehaviour
     public static AudioSource ButtonPress;
     public bool musicPlaying;
 
+    public Text tc1;
+    public Text tc2;
+    public Text tc3;
+    public Text tct;
+    public Text bt1;
+    public Text bt2;
+    public Text bt3;
+    public Text btt;
+    public Text f1;
+    public Text f2;
+    public Text f3;
+    public Text ft;
+    public Text rank;
+
     public GameObject BallInst;
     public static Scene_Manager Instance { get; private set; }
     public void Awake()
@@ -112,6 +126,36 @@ public class Scene_Manager : MonoBehaviour
         //player wins
         if (level == 7)
         {
+            //obtain references to display text boxes for scoreboard
+            tc1 = GameObject.FindGameObjectWithTag("tc1").GetComponent<Text>();
+            tc2 = GameObject.FindGameObjectWithTag("tc2").GetComponent<Text>();
+            tc3 = GameObject.FindGameObjectWithTag("tc3").GetComponent<Text>();
+            tct = GameObject.FindGameObjectWithTag("tct").GetComponent<Text>();
+            bt1 = GameObject.FindGameObjectWithTag("bt1").GetComponent<Text>();
+            bt2 = GameObject.FindGameObjectWithTag("bt2").GetComponent<Text>();
+            bt3 = GameObject.FindGameObjectWithTag("bt3").GetComponent<Text>();
+            btt = GameObject.FindGameObjectWithTag("btt").GetComponent<Text>();
+            f1 = GameObject.FindGameObjectWithTag("f1").GetComponent<Text>();
+            f2 = GameObject.FindGameObjectWithTag("f2").GetComponent<Text>();
+            f3 = GameObject.FindGameObjectWithTag("f3").GetComponent<Text>();
+            ft = GameObject.FindGameObjectWithTag("ft").GetComponent<Text>();
+            rank = GameObject.FindGameObjectWithTag("Rank").GetComponent<Text>();
+
+            //BallInst.GetComponent<BallController>().
+            tc1.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl1c / 60), Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl1c % 60));
+            tc2.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl2c / 60), Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl2c % 60));
+            tc3.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl3c / 60), Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl3c % 60));
+            tct.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(BallInst.GetComponent<BallController>().totalTC / 60), Mathf.FloorToInt(BallInst.GetComponent<BallController>().totalTC % 60));
+            bt1.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl1b / 60), Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl1b % 60));
+            bt2.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl2b / 60), Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl2b % 60));
+            bt3.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl3b / 60), Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl3b % 60));
+            btt.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(BallInst.GetComponent<BallController>().totalBT / 60), Mathf.FloorToInt(BallInst.GetComponent<BallController>().totalBT % 60));
+            f1.text = BallInst.GetComponent<BallController>().fall1.ToString();
+            f2.text = BallInst.GetComponent<BallController>().fall2.ToString();
+            f3.text = BallInst.GetComponent<BallController>().fall3.ToString();
+            ft.text = BallInst.GetComponent<BallController>().fallCtr.ToString();
+            rank.text = "A";
+
             CreditsButton = GameObject.FindGameObjectWithTag("Continue").GetComponent<Button>();
             CreditsButton.onClick.AddListener(() => LoadScene(8));
             Restart = GameObject.FindGameObjectWithTag("Restart").GetComponent<Button>();

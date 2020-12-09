@@ -27,6 +27,19 @@ TagManager:
   - igMusic
   - Timer
   - ScoreScreen
+  - Rank
+  - tc1
+  - tc2
+  - tc3
+  - bt1
+  - bt2
+  - bt3
+  - f1
+  - f2
+  - f3
+  - tct
+  - btt
+  - ft
   layers:
   - Default
   - TransparentFX

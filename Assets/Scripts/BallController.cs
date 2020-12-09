@@ -27,7 +27,7 @@ public class BallController : MonoBehaviour
     public float temp;
     public int curLvl;
     public Vector3 checkPoint;
-    private int fallCtr = 0;
+    public int fallCtr = 0;
     //bnonus time
     public float lvl1b;
     public float lvl2b;
@@ -36,6 +36,13 @@ public class BallController : MonoBehaviour
     public float lvl1c;
     public float lvl2c;
     public float lvl3c;
+    //falls
+    public float fall1 = 0;
+    public float fall2 = 0;
+    public float fall3 = 0;
+
+    public float totalTC;
+    public float totalBT;
 
 
     public static BallController Instance { get; private set; }
@@ -135,6 +142,7 @@ public class BallController : MonoBehaviour
         }
         if (level == 4)
         {
+            fall1 = fallCtr;
             //time completed previous level
             lvl1c = 105f - timeRemaining;
             //bonus time
@@ -144,13 +152,14 @@ public class BallController : MonoBehaviour
             checkPoint = new Vector3(2.5f, 2f, -2.5f);
             ball.transform.position = checkPoint;
             //new timer for current lvl
-            timeRemaining = 120f + timeRemaining;
+            timeRemaining = 75f + lvl1b;
             curLvl = 4;
         }
         if (level == 5)
         {
+            fall2 = fallCtr;
             //time completed previous level
-            lvl2c = 120f - timeRemaining;
+            lvl2c = 75f - timeRemaining + lvl1b;
             //bonus time
             lvl2b = timeRemaining;
             levelTime2.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(lvl2c / 60), Mathf.FloorToInt(lvl2c % 60));
@@ -158,11 +167,13 @@ public class BallController : MonoBehaviour
             checkPoint = new Vector3(135, 33, -2);
             ball.transform.position = checkPoint;
             //new timer for current lvl
-            timeRemaining = 120f + timeRemaining;
+            timeRemaining = 120f + lvl2b;
             curLvl = 5;
-        }   
+        } 
+        /*
         if (level == 7)
         {
+            fall3 = fallCtr;
             //time completed previous level
             lvl3c = 120f - timeRemaining;
             //bonus time
@@ -171,6 +182,7 @@ public class BallController : MonoBehaviour
             timer.SetActive(false);
             //create stats display UI here
         }
+        */
         if(level == 8)
         {
             igMusic.Stop();
@@ -198,6 +210,15 @@ public class BallController : MonoBehaviour
         {
             if (curLvl == 5)
             {
+                fall3 = fallCtr;
+                //time completed previous level
+                lvl3c = 120f - timeRemaining + lvl2b;
+                //bonus time
+                lvl3b = timeRemaining;
+                levelTime3.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(lvl3c / 60), Mathf.FloorToInt(lvl3c % 60));
+                totalTC = lvl1c + lvl2c + lvl3c;
+                totalBT = lvl1b + lvl2b + lvl3b;
+                timer.SetActive(false);
                 Scene_Manager.LoadScene(7);
             }
             else
