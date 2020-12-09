@@ -150,7 +150,11 @@ public class Scene_Manager : MonoBehaviour
             //time penalty for rank Calc
             tempTR = (BallInst.GetComponent<BallController>().totalTC + BallInst.GetComponent<BallController>().fallCtr * 3);
 
-            if (tempTR < 140f)
+            if (tempTR < 120f)
+            {
+                rank.text = "SSS ...JEEZ";
+            }
+            else if (tempTR < 140f)
             {
                 rank.text = "SS";
             }
