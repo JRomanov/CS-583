@@ -289,7 +289,6 @@ public class BallController : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         Paused = false;
-        igMusic.mute = false;
     }
 
     public void PauseGame()
@@ -298,7 +297,6 @@ public class BallController : MonoBehaviour
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         Paused = true;
-        igMusic.mute = true;
     }
 
     public void mainMenu()
