@@ -32,6 +32,8 @@ public class Scene_Manager : MonoBehaviour
     public Text ft;
     public Text rank;
 
+    public float tempTR;
+
     public GameObject BallInst;
     public static Scene_Manager Instance { get; private set; }
     public void Awake()
@@ -115,7 +117,10 @@ public class Scene_Manager : MonoBehaviour
         if (level == 7)
         {
             BallInst = GameObject.FindGameObjectWithTag("Player1");
-
+            
+            //factor in fall penalty
+            tempTR = (BallInst.GetComponent<BallController>().totalTC + BallInst.GetComponent<BallController>().fallCtr * 3);
+             
             //obtain references to display text boxes for scoreboard
             tc1 = GameObject.FindGameObjectWithTag("tc1").GetComponent<Text>();
             tc2 = GameObject.FindGameObjectWithTag("tc2").GetComponent<Text>();
@@ -144,7 +149,35 @@ public class Scene_Manager : MonoBehaviour
             f2.text = BallInst.GetComponent<BallController>().fall2.ToString();
             f3.text = BallInst.GetComponent<BallController>().fall3.ToString();
             ft.text = BallInst.GetComponent<BallController>().fallCtr.ToString();
-            rank.text = "A";
+
+            if (tempTR < 140f)
+            {
+                rank.text = "SS";
+            }
+            else if(tempTR < 160f)
+            {
+                rank.text = "S";
+            }
+            else if (tempTR < 195f)
+            {
+                rank.text = "A";
+            }
+            else if (tempTR < 230f)
+            {
+                rank.text = "B";
+            }
+            else if (tempTR < 255f)
+            {
+                rank.text = "C";
+            }
+            else if (tempTR < 330f)
+            {
+                rank.text = "D";
+            }
+            else
+            {
+                rank.text = "F";
+            }
 
             CreditsButton = GameObject.FindGameObjectWithTag("Continue").GetComponent<Button>();
             CreditsButton.onClick.AddListener(() => LoadScene(8));
