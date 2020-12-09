@@ -24,6 +24,12 @@ published: 01/19/2018
 https://opengameart.org/content/old-hourglass-low-poly
 hourglass as a collectablt to add time during the run
 
+Image 4-
+Name: AllSky Free - 10 Sky / Skybox Set
+Author: rpgwhitelock
+Published: 17/05/2019
+https://assetstore.unity.com/packages/2d/textures-materials/sky/allsky-free-10-sky-skybox-set-146014
+Skyboxes used for Levels 1, 2, and 3
 ---------------------
 AUDIO
 
@@ -36,14 +42,18 @@ Noises are used upon death. Death noises if you will.
 used 3yell9.wav and yell11.wav
 
 ----------------------
+CODES
 
+Code 1-
 Code snippet to fix diagonal movement being too fast
 Author: slumtrimpet
-Posted: Jan 24, 2019
+Posted: 24/01/2019
 https://forum.unity.com/threads/diagonal-movement-speed-to-fast.271703/
 
+
+Code 2-
 Unity Moving Platform Tutorial
 Author: Jayanam
-Posted: Apr 18, 2018
+Posted: 18/04/2018
 https://www.youtube.com/watch?v=rO19dA2jksk
 Methods to create moving platforms.
