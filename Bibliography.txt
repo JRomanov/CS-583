@@ -30,6 +30,21 @@ Author: rpgwhitelock
 Published: 17/05/2019
 https://assetstore.unity.com/packages/2d/textures-materials/sky/allsky-free-10-sky-skybox-set-146014
 Skyboxes used for Levels 1, 2, and 3
+
+Image 5-
+Name: CavernCobble
+Author: Doomcaster
+Published: 04/03/2016
+https://doomcaster.itch.io/button-assets
+Used as buttons
+
+Image 6-
+Name: Free 2D Adventure Beach Background
+Author: Super Brutal Assets
+Published: 03/19/2018
+https://assetstore.unity.com/packages/2d/environments/free-2d-adventure-beach-background-82090#description
+Used all three backgrounds in our menu scenes.
+
 ---------------------
 AUDIO
 
@@ -40,6 +55,14 @@ published: 04/12/2012
 https://opengameart.org/content/male-gruntyelling-sounds
 Noises are used upon death. Death noises if you will.
 used 3yell9.wav and yell11.wav
+
+Sound 2 -
+Name: skulls_adventure
+Published: 03/02/2012
+Author: Mopz
+https://opengameart.org/content/skulls-adventure-music
+Music is used during end game credits.
+Used .mp3
 
 ----------------------
 CODES
