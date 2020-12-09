@@ -268,7 +268,7 @@ public class BallController : MonoBehaviour
                 //push right
                 if (ball.transform.position.z > collision.transform.position.z)
                 {
-                    ballRB.AddForce(new Vector3(0, 0, ball.transform.position.z) * 330f);
+                    ballRB.AddForce(new Vector3(0, 0, ball.transform.position.z) * 400f);
                 }
                 //else push left
                 else if (ball.transform.position.z < collision.transform.position.z)
