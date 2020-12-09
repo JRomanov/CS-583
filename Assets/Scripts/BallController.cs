@@ -131,6 +131,7 @@ public class BallController : MonoBehaviour
         if (level == 3)
         {
             fallCtr = 0;
+            fallText.text = fallCtr.ToString();
             timer.SetActive(true);
             levelTime1.text = "";
             levelTime2.text = "";
