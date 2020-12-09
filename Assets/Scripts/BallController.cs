@@ -122,7 +122,7 @@ public class BallController : MonoBehaviour
             ExtraTime3.text = "";
             checkPoint = new Vector3(.65f, 1f, .5f);
             ball.transform.position = checkPoint;
-            timeRemaining = 60f;
+            timeRemaining = 105f;
             curLvl = 3;
             igMusic.Play();
         }
