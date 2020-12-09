@@ -41,6 +41,8 @@ public class BallController : MonoBehaviour
     public float fall2 = 0;
     public float fall3 = 0;
 
+    public bool gameOver = false;
+
     public float totalTC;
     public float totalBT;
 
@@ -89,7 +91,7 @@ public class BallController : MonoBehaviour
 
     private void Update()
     {   
-        if (!Paused)
+        if (!Paused && !gameOver)
         {
             timerCD();
         }

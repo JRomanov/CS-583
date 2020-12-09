@@ -302,7 +302,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &149883647
 Light:
   m_ObjectHideFlags: 0
@@ -449,8 +449,8 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "The Game Master has trapped you in a ball, and the only way out alive
     is to roll to your freedom!\n\nReach the end of each level while overcoming obstacles
-    and avoiding falling off the platforms.\n\nControls: \n W - Move Forward    \n
-    A - Move Left          \n S - Move Backward\n D - Move Right       "
+    and avoiding falling off the platforms.\n\nControls: \n W - Move Forward    \nA
+    - Move Left          \n S - Move Backward\n D - Move Right       "
 --- !u!222 &384175474
 CanvasRenderer:
   m_ObjectHideFlags: 0
