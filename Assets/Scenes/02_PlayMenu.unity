@@ -412,7 +412,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 30}
+  m_AnchoredPosition: {x: 15, y: 305}
   m_SizeDelta: {x: 1400, y: 410}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &384175473
@@ -445,13 +445,12 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Controls: W,A,S,D
-
-
-    Reach the end of each level while overcoming obstacles
-    and avoiding falling off the platforms.'
+  m_Text: "The Game Master has trapped you in a ball, and the only way out alive
+    is to roll to your freedom!\n\nReach the end of each level while overcoming obstacles
+    and avoiding falling off the platforms.\n\nControls: \n W - Move Forward    \n
+    A - Move Left          \n S - Move Backward\n D - Move Right       "
 --- !u!222 &384175474
 CanvasRenderer:
   m_ObjectHideFlags: 0

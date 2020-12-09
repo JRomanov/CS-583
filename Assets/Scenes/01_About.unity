@@ -450,8 +450,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'GameBoyz II Men
 
-
-    **Fill this with our About Page Info**'
+'
 --- !u!222 &751971683
 CanvasRenderer:
   m_ObjectHideFlags: 0
