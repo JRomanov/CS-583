@@ -162,19 +162,19 @@ public class Scene_Manager : MonoBehaviour
             {
                 rank.text = "S";
             }
-            else if (tempTR < 195f)
+            else if (tempTR < 185f)
             {
                 rank.text = "A";
             }
-            else if (tempTR < 230f)
+            else if (tempTR < 210f)
             {
                 rank.text = "B";
             }
-            else if (tempTR < 255f)
+            else if (tempTR < 240f)
             {
                 rank.text = "C";
             }
-            else if (tempTR < 330f)
+            else if (tempTR < 280f)
             {
                 rank.text = "D";
             }
