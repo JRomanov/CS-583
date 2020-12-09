@@ -1,5 +1,7 @@
 heyo my peoples
 
+IMAGES
+
 Image 1-
 Name: 117 Stone Wall Tilable Textures in 8 Themes
 Author: p0ss
@@ -14,6 +16,16 @@ published: 08/10/2014
 https://opengameart.org/content/50-free-textures-5-with-normalmaps?page=2
 used on bouncy enemy
 205, 233,238, 241,242,243 are used to texturize level 3
+
+---------------------
+AUDIO
+
+Sound 1-
+Name: Male Grunt/Yelling sounds
+Author: HaelDB
+published: 04/12/2012
+https://opengameart.org/content/male-gruntyelling-sounds
+Noises are used upon death. Death noises if you will.
 
 ----------------------
 
