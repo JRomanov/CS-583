@@ -40,6 +40,7 @@ TagManager:
   - tct
   - btt
   - ft
+  - TimeBoost
   layers:
   - Default
   - TransparentFX
