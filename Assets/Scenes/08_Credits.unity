@@ -155,7 +155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 27, y: -1198}
+  m_AnchoredPosition: {x: 27, y: -1302.9}
   m_SizeDelta: {x: 390.92255, y: 88.15319}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &23309544
@@ -665,7 +665,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 27, y: -1184.1}
+  m_AnchoredPosition: {x: 27, y: -1289}
   m_SizeDelta: {x: 390.92255, y: 88.15319}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &563214813
@@ -981,7 +981,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 168, y: -1201}
+  m_AnchoredPosition: {x: 168, y: -1305.9}
   m_SizeDelta: {x: 390.92255, y: 88.15319}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1380450416
@@ -1115,7 +1115,7 @@ GameObject:
   - component: {fileID: 1664081398}
   - component: {fileID: 1664081397}
   m_Layer: 5
-  m_Name: RawImage
+  m_Name: background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1159,7 +1159,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 74ac9309becb80e48a15f770cf8dc8a8, type: 3}
+  m_Texture: {fileID: 2800000, guid: be297401018030a41b5f487fb078254d, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
