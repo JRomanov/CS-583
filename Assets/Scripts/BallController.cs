@@ -107,6 +107,7 @@ public class BallController : MonoBehaviour
             }
         }
 
+        //let boosters spawn
         if (timeRemaining < 30f)
         {
             foreach (GameObject tB in timeBoosters)
@@ -120,7 +121,6 @@ public class BallController : MonoBehaviour
         //movement
         float xSpeed = Input.GetAxis("Horizontal");
         float ySpeed = Input.GetAxis("Vertical");
-
 
         ballRB.AddForce(Vector3.ClampMagnitude(new Vector3(-ySpeed, 0, xSpeed), 1f) * ballSpeed * Time.deltaTime, ForceMode.Acceleration);
         //Balance speed with FPS
@@ -256,29 +256,24 @@ public class BallController : MonoBehaviour
             //if player if behind the object
             if (ball.transform.position.x >= (collision.transform.position.x + .4f) )
             {
-                Debug.Log("Player is behind Bouncy.");
                 ballRB.AddForce(new Vector3(ball.transform.position.x, 0, 0) * -45f);
             }
             //else if player is in front of object
             else if (ball.transform.position.x <= (collision.transform.position.x -1.05f))
             {
-                Debug.Log("Player is in front Bouncy.");
                 ballRB.AddForce(new Vector3(ball.transform.position.x, 0, 0) * 45f);
             }
             else if ((ball.transform.position.x < (collision.transform.position.x + .4f)) || (ball.transform.position.x > (collision.transform.position.x - 1.05f)))
             {
-                Debug.Log("Player is within side Threshold, checking sides");
                 //push right
                 if (ball.transform.position.z > collision.transform.position.z)
                 {
                     ballRB.AddForce(new Vector3(0, 0, ball.transform.position.z) * 330f);
-                    Debug.Log("Bouncing player to the right");
                 }
                 //else push left
                 else if (ball.transform.position.z < collision.transform.position.z)
                 {
                     ballRB.AddForce(new Vector3(0, 0, ball.transform.position.z) * 700f);
-                    Debug.Log("Bouncing player to the left");
                 }
             }
         }
