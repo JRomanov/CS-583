@@ -101,7 +101,7 @@ public class Scene_Manager : MonoBehaviour
         {
             menuMusic.Stop();
             musicPlaying = false;
-            BallInst = GameObject.FindGameObjectWithTag("Player1");
+            //BallInst = GameObject.FindGameObjectWithTag("Player1");
         }
         //Level 2
         if (level == 4)
@@ -126,6 +126,7 @@ public class Scene_Manager : MonoBehaviour
         //player wins
         if (level == 7)
         {
+            BallInst = GameObject.FindGameObjectWithTag("Player1");
             //obtain references to display text boxes for scoreboard
             tc1 = GameObject.FindGameObjectWithTag("tc1").GetComponent<Text>();
             tc2 = GameObject.FindGameObjectWithTag("tc2").GetComponent<Text>();
