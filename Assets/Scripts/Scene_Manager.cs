@@ -48,12 +48,11 @@ public class Scene_Manager : MonoBehaviour
             About.onClick.AddListener(() => LoadScene(1));
             Quit = GameObject.FindGameObjectWithTag("QuitButton").GetComponent<Button>();
             Quit.onClick.AddListener(() => Game_Quit());
-            //menuMusic = GetComponent<AudioSource>();
-            //menuMusic.Play();
-            ButtonPress = GameObject.FindGameObjectWithTag("ButtonPress").GetComponent<AudioSource>();
-            /*
+            menuMusic = GetComponent<AudioSource>();
+            menuMusic.Play();
+            ButtonPress = GameObject.FindGameObjectWithTag("ButtonPress").GetComponent<AudioSource>();       
             musicPlaying = true;
-            */
+
         }
         else
         {
@@ -101,7 +100,6 @@ public class Scene_Manager : MonoBehaviour
         {
             menuMusic.Stop();
             musicPlaying = false;
-            //BallInst = GameObject.FindGameObjectWithTag("Player1");
         }
         //Level 2
         if (level == 4)
@@ -127,6 +125,7 @@ public class Scene_Manager : MonoBehaviour
         if (level == 7)
         {
             BallInst = GameObject.FindGameObjectWithTag("Player1");
+
             //obtain references to display text boxes for scoreboard
             tc1 = GameObject.FindGameObjectWithTag("tc1").GetComponent<Text>();
             tc2 = GameObject.FindGameObjectWithTag("tc2").GetComponent<Text>();
@@ -142,15 +141,15 @@ public class Scene_Manager : MonoBehaviour
             ft = GameObject.FindGameObjectWithTag("ft").GetComponent<Text>();
             rank = GameObject.FindGameObjectWithTag("Rank").GetComponent<Text>();
 
-            //BallInst.GetComponent<BallController>().
+            //print Scores
             tc1.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl1c / 60), Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl1c % 60));
             tc2.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl2c / 60), Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl2c % 60));
             tc3.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl3c / 60), Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl3c % 60));
             tct.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(BallInst.GetComponent<BallController>().totalTC / 60), Mathf.FloorToInt(BallInst.GetComponent<BallController>().totalTC % 60));
-            bt1.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl1b / 60), Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl1b % 60));
-            bt2.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl2b / 60), Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl2b % 60));
-            bt3.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl3b / 60), Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl3b % 60));
-            btt.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(BallInst.GetComponent<BallController>().totalBT / 60), Mathf.FloorToInt(BallInst.GetComponent<BallController>().totalBT % 60));
+            bt1.text = string.Format("+{0:00}:{1:00}", Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl1b / 60), Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl1b % 60));
+            bt2.text = string.Format("+{0:00}:{1:00}", Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl2b / 60), Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl2b % 60));
+            bt3.text = string.Format("+{0:00}:{1:00}", Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl3b / 60), Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl3b % 60));
+            btt.text = string.Format("+{0:00}:{1:00}", Mathf.FloorToInt(BallInst.GetComponent<BallController>().totalBT / 60), Mathf.FloorToInt(BallInst.GetComponent<BallController>().totalBT % 60));
             f1.text = BallInst.GetComponent<BallController>().fall1.ToString();
             f2.text = BallInst.GetComponent<BallController>().fall2.ToString();
             f3.text = BallInst.GetComponent<BallController>().fall3.ToString();
