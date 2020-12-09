@@ -44,7 +44,7 @@ public class BallController : MonoBehaviour
     public float totalTC;
     public float totalBT;
 
-
+    public GameObject[] timeBoosters;
     public static BallController Instance { get; private set; }
     public void Awake()
     {
@@ -106,6 +106,14 @@ public class BallController : MonoBehaviour
                 PauseGame();
             }
         }
+
+        if (timeRemaining < 30f)
+        {
+            foreach (GameObject tB in timeBoosters)
+            {
+                tB.SetActive(true);
+            }
+        }
     }
     void FixedUpdate()
     {
@@ -141,6 +149,13 @@ public class BallController : MonoBehaviour
             timeRemaining = 105f;
             curLvl = 3;
             igMusic.Play();
+
+            //instantiate and turn off all booster untill ready
+            timeBoosters = GameObject.FindGameObjectsWithTag("TimeBoost");
+            foreach (GameObject tB in timeBoosters)
+            {
+                tB.SetActive(false);
+            }
         }
         if (level == 4)
         {
@@ -156,6 +171,13 @@ public class BallController : MonoBehaviour
             //new timer for current lvl
             timeRemaining = 75f + lvl1b;
             curLvl = 4;
+
+            //instantiate and turn off all booster untill ready
+            timeBoosters = GameObject.FindGameObjectsWithTag("TimeBoost");
+            foreach (GameObject tB in timeBoosters)
+            {
+                tB.SetActive(false);
+            }
         }
         if (level == 5)
         {
@@ -171,6 +193,13 @@ public class BallController : MonoBehaviour
             //new timer for current lvl
             timeRemaining = 120f + lvl2b;
             curLvl = 5;
+
+            //instantiate and turn off all booster untill ready
+            timeBoosters = GameObject.FindGameObjectsWithTag("TimeBoost");
+            foreach (GameObject tB in timeBoosters)
+            {
+                tB.SetActive(false);
+            }
         } 
         if(level == 8)
         {
@@ -182,7 +211,11 @@ public class BallController : MonoBehaviour
     //collectables/Boosters
     private void OnTriggerEnter(Collider collision)
     {
-
+        if(collision.tag == "TimeBoost")
+        {
+            timeRemaining += 10f;
+            Destroy(collision.gameObject);
+        }
     }
 
     //Collision Tracker --> Enemies/Obstacles/Restarts
