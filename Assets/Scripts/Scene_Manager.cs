@@ -117,9 +117,6 @@ public class Scene_Manager : MonoBehaviour
         if (level == 7)
         {
             BallInst = GameObject.FindGameObjectWithTag("Player1");
-            
-            //factor in fall penalty
-            tempTR = (BallInst.GetComponent<BallController>().totalTC + BallInst.GetComponent<BallController>().fallCtr * 3);
              
             //obtain references to display text boxes for scoreboard
             tc1 = GameObject.FindGameObjectWithTag("tc1").GetComponent<Text>();
@@ -149,6 +146,9 @@ public class Scene_Manager : MonoBehaviour
             f2.text = BallInst.GetComponent<BallController>().fall2.ToString();
             f3.text = BallInst.GetComponent<BallController>().fall3.ToString();
             ft.text = BallInst.GetComponent<BallController>().fallCtr.ToString();
+
+            //time penalty for rank Calc
+            tempTR = (BallInst.GetComponent<BallController>().totalTC + BallInst.GetComponent<BallController>().fallCtr * 3);
 
             if (tempTR < 140f)
             {
