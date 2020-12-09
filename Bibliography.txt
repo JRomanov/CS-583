@@ -26,6 +26,7 @@ Author: HaelDB
 published: 04/12/2012
 https://opengameart.org/content/male-gruntyelling-sounds
 Noises are used upon death. Death noises if you will.
+used 3yell9.wav and yell11.wav
 
 ----------------------
 
