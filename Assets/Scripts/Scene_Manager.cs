@@ -141,10 +141,10 @@ public class Scene_Manager : MonoBehaviour
             tc2.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl2c / 60), Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl2c % 60));
             tc3.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl3c / 60), Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl3c % 60));
             tct.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(BallInst.GetComponent<BallController>().totalTC / 60), Mathf.FloorToInt(BallInst.GetComponent<BallController>().totalTC % 60));
-            bt1.text = string.Format("+{0:00}:{1:00}", Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl1b / 60), Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl1b % 60));
-            bt2.text = string.Format("+{0:00}:{1:00}", Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl2b / 60), Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl2b % 60));
-            bt3.text = string.Format("+{0:00}:{1:00}", Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl3b / 60), Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl3b % 60));
-            btt.text = string.Format("+{0:00}:{1:00}", Mathf.FloorToInt(BallInst.GetComponent<BallController>().totalBT / 60), Mathf.FloorToInt(BallInst.GetComponent<BallController>().totalBT % 60));
+            bt1.text = "+" + ((int)BallInst.GetComponent<BallController>().fall1 * 3).ToString() + "s";
+            bt2.text = "+" + ((int)BallInst.GetComponent<BallController>().fall2 * 3).ToString() + "s";
+            bt3.text = "+" + ((int)BallInst.GetComponent<BallController>().fall3 * 3).ToString() + "s";
+            btt.text = "+" + ((int)BallInst.GetComponent<BallController>().fallCtr * 3).ToString() + "s";
             f1.text = BallInst.GetComponent<BallController>().fall1.ToString();
             f2.text = BallInst.GetComponent<BallController>().fall2.ToString();
             f3.text = BallInst.GetComponent<BallController>().fall3.ToString();
@@ -191,6 +191,7 @@ public class Scene_Manager : MonoBehaviour
             creditsMusic.Play();
             Back = GameObject.FindGameObjectWithTag("BackButton").GetComponent<Button>();
             Back.onClick.AddListener(() => LoadScene(0));
+            Destroy(BallInst);
         }
     
     }

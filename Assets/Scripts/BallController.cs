@@ -243,6 +243,7 @@ public class BallController : MonoBehaviour
                 totalTC = lvl1c + lvl2c + lvl3c;
                 totalBT = lvl1b + lvl2b + lvl3b;
                 timer.SetActive(false);
+                gameOver = true;
                 Scene_Manager.LoadScene(7);
             }
             else
