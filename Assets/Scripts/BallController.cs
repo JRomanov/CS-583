@@ -213,7 +213,7 @@ public class BallController : MonoBehaviour
     {
         if(collision.tag == "TimeBoost")
         {
-            timeRemaining += 10f;
+            timeRemaining += 30f;
             Destroy(collision.gameObject);
         }
     }
