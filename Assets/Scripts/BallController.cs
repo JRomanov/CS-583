@@ -157,7 +157,7 @@ public class BallController : MonoBehaviour
         }
         if (level == 5)
         {
-            fall2 = fallCtr;
+            fall2 = fallCtr - fall1;
             //time completed previous level
             lvl2c = 75f - timeRemaining + lvl1b;
             //bonus time
@@ -210,7 +210,7 @@ public class BallController : MonoBehaviour
         {
             if (curLvl == 5)
             {
-                fall3 = fallCtr;
+                fall3 = fallCtr - fall2 - fall1;
                 //time completed previous level
                 lvl3c = 120f - timeRemaining + lvl2b;
                 //bonus time

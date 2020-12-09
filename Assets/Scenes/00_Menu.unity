@@ -500,8 +500,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f38ad456f5d884aa5e30e3ee427030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CreditsButton: {fileID: 0}
+  Restart: {fileID: 0}
   menuMusic: {fileID: 0}
+  creditsMusic: {fileID: 0}
   musicPlaying: 0
+  tc1: {fileID: 0}
+  tc2: {fileID: 0}
+  tc3: {fileID: 0}
+  tct: {fileID: 0}
+  bt1: {fileID: 0}
+  bt2: {fileID: 0}
+  bt3: {fileID: 0}
+  btt: {fileID: 0}
+  f1: {fileID: 0}
+  f2: {fileID: 0}
+  f3: {fileID: 0}
+  ft: {fileID: 0}
+  rank: {fileID: 0}
+  BallInst: {fileID: 0}
 --- !u!4 &870968289
 Transform:
   m_ObjectHideFlags: 0

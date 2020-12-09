@@ -302,7 +302,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -640.9, y: 383.99997}
+  m_AnchoredPosition: {x: -640.9, y: 380.99994}
   m_SizeDelta: {x: 135, y: 51.374954}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7427181415288848005
@@ -1461,7 +1461,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -640, y: 180}
+  m_AnchoredPosition: {x: -640, y: 177}
   m_SizeDelta: {x: 135, y: 51.374954}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7279299823458630
@@ -1573,12 +1573,18 @@ MonoBehaviour:
   temp: 0
   curLvl: 0
   checkPoint: {x: 0, y: 0, z: 0}
+  fallCtr: 0
   lvl1b: 0
   lvl2b: 0
   lvl3b: 0
   lvl1c: 0
   lvl2c: 0
   lvl3c: 0
+  fall1: 0
+  fall2: 0
+  fall3: 0
+  totalTC: 0
+  totalBT: 0
 --- !u!33 &7523385705195813522
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1767,7 +1773,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -640.30005, y: 282.99997}
+  m_AnchoredPosition: {x: -640.30005, y: 279.99994}
   m_SizeDelta: {x: 135, y: 51.374954}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3853652993712478578
