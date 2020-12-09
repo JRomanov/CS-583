@@ -152,7 +152,7 @@ public class Scene_Manager : MonoBehaviour
 
             if (tempTR < 120f)
             {
-                rank.text = "SSS ...JEEZ";
+                rank.text = "SSS";
             }
             else if (tempTR < 140f)
             {
