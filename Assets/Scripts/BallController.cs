@@ -170,19 +170,6 @@ public class BallController : MonoBehaviour
             timeRemaining = 120f + lvl2b;
             curLvl = 5;
         } 
-        /*
-        if (level == 7)
-        {
-            fall3 = fallCtr;
-            //time completed previous level
-            lvl3c = 120f - timeRemaining;
-            //bonus time
-            lvl3b = timeRemaining;
-            levelTime3.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(lvl3c / 60), Mathf.FloorToInt(lvl3c % 60));
-            timer.SetActive(false);
-            //create stats display UI here
-        }
-        */
         if(level == 8)
         {
             igMusic.Stop();

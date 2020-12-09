@@ -101,16 +101,6 @@ public class Scene_Manager : MonoBehaviour
             menuMusic.Stop();
             musicPlaying = false;
         }
-        //Level 2
-        if (level == 4)
-        {
-
-        }
-        //Level 3
-        if (level == 5)
-        {
-
-        }
         //Game Over
         if (level == 6)
         {
