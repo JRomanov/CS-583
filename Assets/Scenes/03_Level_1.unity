@@ -9555,17 +9555,17 @@ PrefabInstance:
     - target: {fileID: 7523385705195813523, guid: 34c784b4f98a4334e9efef5b569799f0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.267
       objectReference: {fileID: 0}
     - target: {fileID: 7523385705195813523, guid: 34c784b4f98a4334e9efef5b569799f0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.773
       objectReference: {fileID: 0}
     - target: {fileID: 7523385705195813523, guid: 34c784b4f98a4334e9efef5b569799f0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.497
       objectReference: {fileID: 0}
     - target: {fileID: 7523385705195813523, guid: 34c784b4f98a4334e9efef5b569799f0,
         type: 3}

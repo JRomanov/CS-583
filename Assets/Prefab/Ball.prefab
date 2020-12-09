@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -567.7, y: 485}
+  m_AnchoredPosition: {x: -594.4, y: 484.99988}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8648323742522864471
@@ -1583,8 +1583,10 @@ MonoBehaviour:
   fall1: 0
   fall2: 0
   fall3: 0
+  gameOver: 0
   totalTC: 0
   totalBT: 0
+  timeBoosters: []
 --- !u!33 &7523385705195813522
 MeshFilter:
   m_ObjectHideFlags: 0
