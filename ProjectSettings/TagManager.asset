@@ -25,6 +25,8 @@ TagManager:
   - CreditsCanvas
   - PlayerUI
   - igMusic
+  - Timer
+  - ScoreScreen
   layers:
   - Default
   - TransparentFX
