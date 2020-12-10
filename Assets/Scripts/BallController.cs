@@ -13,11 +13,11 @@ public class BallController : MonoBehaviour
 
     public GameObject pauseMenu;
     public GameObject timer;
-    private bool Paused;
+    public bool Paused;
     public Button ResumeButton;
     public Button MenuButton;
     public Button QuitButton;
-    public AudioSource igMusic;
+    //public AudioSource igMusic;
     public float timeRemaining;
     public Text timerText;
     public Text fallText;
@@ -80,7 +80,7 @@ public class BallController : MonoBehaviour
             levelTime1 = GameObject.FindGameObjectWithTag("ExtraTime1").GetComponent<Text>();
             levelTime2 = GameObject.FindGameObjectWithTag("ExtraTime2").GetComponent<Text>();
             levelTime3 = GameObject.FindGameObjectWithTag("ExtraTime3").GetComponent<Text>();
-            igMusic = GameObject.FindGameObjectWithTag("igMusic").GetComponent<AudioSource>();
+            //igMusic = GameObject.FindGameObjectWithTag("igMusic").GetComponent<AudioSource>();
         }
         else
         {
@@ -99,8 +99,7 @@ public class BallController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (Paused)
-            {
-
+            {        
                 ResumeGame();
             }
             else
@@ -135,7 +134,7 @@ public class BallController : MonoBehaviour
     {
         if(level == 0)
         {
-            igMusic.Stop();
+            //igMusic.Stop();
             Destroy(this.gameObject);
         }
         if (level == 3)
@@ -151,7 +150,7 @@ public class BallController : MonoBehaviour
             ball.transform.position = checkPoint;
             timeRemaining = 105f;
             curLvl = 3;
-            igMusic.Play();
+            //igMusic.Play();
 
             //instantiate and turn off all booster untill ready
             timeBoosters = GameObject.FindGameObjectsWithTag("TimeBoost");
@@ -206,7 +205,7 @@ public class BallController : MonoBehaviour
         } 
         if(level == 8)
         {
-            igMusic.Stop();
+            //igMusic.Stop();
         }
 
     }
@@ -305,7 +304,6 @@ public class BallController : MonoBehaviour
         pauseMenu.SetActive(false);
         Paused = false;
         Time.timeScale = 1f;
-        igMusic.Stop();
         Scene_Manager.LoadScene(0);
     }
 

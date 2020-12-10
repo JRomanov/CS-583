@@ -16,6 +16,8 @@ public class Scene_Manager : MonoBehaviour
     public AudioSource menuMusic;
     public AudioSource creditsMusic;
     public static AudioSource ButtonPress;
+    public AudioSource igMusic;
+    public bool inGame;
     public bool musicPlaying;
 
     public Text tc1;
@@ -54,6 +56,7 @@ public class Scene_Manager : MonoBehaviour
             menuMusic.Play();
             ButtonPress = GameObject.FindGameObjectWithTag("ButtonPress").GetComponent<AudioSource>();       
             musicPlaying = true;
+            igMusic = GameObject.FindGameObjectWithTag("igMusic").GetComponent<AudioSource>();
 
         }
         else
@@ -63,11 +66,30 @@ public class Scene_Manager : MonoBehaviour
         }
     }
 
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(inGame)
+            {
+                if (BallInst.GetComponent<BallController>().Paused)
+                {
+                    igMusic.Play();
+                }
+                else
+                {
+                    igMusic.Stop();
+                }
+            }
+        }
+    }
     private void OnLevelWasLoaded(int level)
     {
         //MainMenu
         if (level == 0)
         {
+            igMusic.Stop();
+            inGame = false;
             //only replay the music loop if coming from Play Game scenes
             if (musicPlaying == false)
             {
@@ -101,7 +123,10 @@ public class Scene_Manager : MonoBehaviour
         if (level == 3)
         {
             menuMusic.Stop();
+            igMusic.Play();
+            inGame = true;
             musicPlaying = false;
+            BallInst = GameObject.FindGameObjectWithTag("Player1");
         }
         //Game Over
         if (level == 6)
@@ -116,7 +141,7 @@ public class Scene_Manager : MonoBehaviour
         //player wins
         if (level == 7)
         {
-            BallInst = GameObject.FindGameObjectWithTag("Player1");
+            //BallInst = GameObject.FindGameObjectWithTag("Player1");
              
             //obtain references to display text boxes for scoreboard
             tc1 = GameObject.FindGameObjectWithTag("tc1").GetComponent<Text>();
@@ -192,6 +217,8 @@ public class Scene_Manager : MonoBehaviour
         //credits screen
         if (level == 8)
         {
+            igMusic.Stop();
+            inGame = false;
             creditsMusic = GameObject.FindGameObjectWithTag("CreditsCanvas").GetComponent<AudioSource>();
             creditsMusic.Play();
             Back = GameObject.FindGameObjectWithTag("BackButton").GetComponent<Button>();
