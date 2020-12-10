@@ -1,5 +1,5 @@
 ###################################################################
-# Title: CS583 FALL 2020 Project 3B - Group 3D Game 
+# Title: CS583 FALL 2020 Project 3B - Group 3D Game Bibliography
 #
 # ATTN: Please use this general template for citing your work...
 #
