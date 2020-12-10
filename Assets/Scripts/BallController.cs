@@ -23,7 +23,7 @@ public class BallController : MonoBehaviour
     public Text fallText;
     public Text levelTime1;
     public Text levelTime2;
-    public Text levelTime3;
+    //public Text levelTime3;
     public float temp;
     public int curLvl;
     public Vector3 checkPoint;
@@ -79,7 +79,7 @@ public class BallController : MonoBehaviour
             fallText = GameObject.FindGameObjectWithTag("FallCtr").GetComponent<Text>();
             levelTime1 = GameObject.FindGameObjectWithTag("ExtraTime1").GetComponent<Text>();
             levelTime2 = GameObject.FindGameObjectWithTag("ExtraTime2").GetComponent<Text>();
-            levelTime3 = GameObject.FindGameObjectWithTag("ExtraTime3").GetComponent<Text>();
+            //levelTime3 = GameObject.FindGameObjectWithTag("ExtraTime3").GetComponent<Text>();
             //igMusic = GameObject.FindGameObjectWithTag("igMusic").GetComponent<AudioSource>();
         }
         else
@@ -145,7 +145,7 @@ public class BallController : MonoBehaviour
             timer.SetActive(true);
             levelTime1.text = "";
             levelTime2.text = "";
-            levelTime3.text = "";
+            //levelTime3.text = "";
             checkPoint = new Vector3(.65f, 1f, .5f);
             ball.transform.position = checkPoint;
             timeRemaining = 105f;
@@ -239,7 +239,7 @@ public class BallController : MonoBehaviour
                 lvl3c = 120f - timeRemaining + lvl2b;
                 //bonus time
                 lvl3b = timeRemaining;
-                levelTime3.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(lvl3c / 60), Mathf.FloorToInt(lvl3c % 60));
+                //levelTime3.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(lvl3c / 60), Mathf.FloorToInt(lvl3c % 60));
                 totalTC = lvl1c + lvl2c + lvl3c;
                 totalBT = lvl1b + lvl2b + lvl3b;
                 timer.SetActive(false);

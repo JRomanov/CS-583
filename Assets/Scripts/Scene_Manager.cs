@@ -68,18 +68,16 @@ public class Scene_Manager : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+
+        if(inGame)
         {
-            if(inGame)
+            if (!BallInst.GetComponent<BallController>().Paused)
             {
-                if (BallInst.GetComponent<BallController>().Paused)
-                {
-                    igMusic.UnPause();
-                }
-                else
-                {
-                    igMusic.Pause();
-                }
+                igMusic.UnPause();
+            }
+            else
+            {
+                igMusic.Pause();
             }
         }
     }
@@ -179,27 +177,27 @@ public class Scene_Manager : MonoBehaviour
             {
                 rank.text = "SSS";
             }
-            else if (tempTR < 140f)
+            else if (tempTR < 130f)
             {
                 rank.text = "SS";
             }
-            else if(tempTR < 160f)
+            else if(tempTR < 140f)
             {
                 rank.text = "S";
             }
-            else if (tempTR < 185f)
+            else if (tempTR < 165f)
             {
                 rank.text = "A";
             }
-            else if (tempTR < 210f)
+            else if (tempTR < 200f)
             {
                 rank.text = "B";
             }
-            else if (tempTR < 240f)
+            else if (tempTR < 230f)
             {
                 rank.text = "C";
             }
-            else if (tempTR < 280f)
+            else if (tempTR < 250f)
             {
                 rank.text = "D";
             }
