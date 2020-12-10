@@ -33,6 +33,8 @@ public class Scene_Manager : MonoBehaviour
     public Text f3;
     public Text ft;
     public Text rank;
+    public Text pBest;
+    public float PB = 1000f;
 
     public float tempTR;
 
@@ -155,7 +157,7 @@ public class Scene_Manager : MonoBehaviour
             f3 = GameObject.FindGameObjectWithTag("f3").GetComponent<Text>();
             ft = GameObject.FindGameObjectWithTag("ft").GetComponent<Text>();
             rank = GameObject.FindGameObjectWithTag("Rank").GetComponent<Text>();
-
+            pBest = GameObject.FindGameObjectWithTag("pBest").GetComponent<Text>();
             //print Scores
             tc1.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl1c / 60), Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl1c % 60));
             tc2.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl2c / 60), Mathf.FloorToInt(BallInst.GetComponent<BallController>().lvl2c % 60));
@@ -206,6 +208,11 @@ public class Scene_Manager : MonoBehaviour
                 rank.text = "F";
             }
 
+            if(BallInst.GetComponent<BallController>().totalTC < PB)
+            {
+                PB = BallInst.GetComponent<BallController>().totalTC;
+            }
+            pBest.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(PB / 60), Mathf.FloorToInt(PB % 60));
             CreditsButton = GameObject.FindGameObjectWithTag("Continue").GetComponent<Button>();
             CreditsButton.onClick.AddListener(() => LoadScene(8));
             Restart = GameObject.FindGameObjectWithTag("Restart").GetComponent<Button>();

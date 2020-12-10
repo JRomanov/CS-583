@@ -42,6 +42,7 @@ TagManager:
   - ft
   - TimeBoost
   - noise
+  - pBest
   layers:
   - Default
   - TransparentFX
