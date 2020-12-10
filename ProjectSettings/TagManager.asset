@@ -41,6 +41,7 @@ TagManager:
   - btt
   - ft
   - TimeBoost
+  - noise
   layers:
   - Default
   - TransparentFX

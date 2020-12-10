@@ -4911,7 +4911,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-4492
+  m_Name: pb_Mesh-54554
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -29630,6 +29630,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: deffnosie
       objectReference: {fileID: 0}
+    - target: {fileID: 1435343880023423386, guid: 17c10af995d7b864a86ec6dfdcc8c4c6,
+        type: 3}
+      propertyPath: m_TagString
+      value: noise
+      objectReference: {fileID: 0}
     - target: {fileID: 1435343880023423389, guid: 17c10af995d7b864a86ec6dfdcc8c4c6,
         type: 3}
       propertyPath: m_Size.x
@@ -29725,7 +29730,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 374419442}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1435343880023423388, guid: 17c10af995d7b864a86ec6dfdcc8c4c6, type: 3}
+    - {fileID: 1435343880023423461, guid: 17c10af995d7b864a86ec6dfdcc8c4c6, type: 3}
+    - {fileID: 1435343880023423390, guid: 17c10af995d7b864a86ec6dfdcc8c4c6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 17c10af995d7b864a86ec6dfdcc8c4c6, type: 3}
 --- !u!4 &1435343878323655330 stripped
 Transform:

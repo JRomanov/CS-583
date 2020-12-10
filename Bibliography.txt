@@ -1,17 +1,6 @@
-###################################################################
-# Title: CS583 FALL 2020 Project 3B - Group 3D Game Bibliography
-#
-# ATTN: Please use this general template for citing your work...
-#
-# "Category" "# in sequence"
-# Name:
-# Author:
-# Published:
-# URL:
-# Use: <--Refers to in-game use of said work
-#
-####################################################################
-
+##################################################################
+# Title: CS583 FALL 2020 Project 3B - Group 3D Game Bibliography #
+##################################################################
 ----------------------
 IMAGES
 ----------------------
@@ -148,11 +137,4 @@ Author: John
 Posted: 02/25/2020
 URL: https://gamedevbeginner.com/how-to-make-countdown-timer-in-unity-minutes-seconds/
 Use: Create in-game timer 
-
-Code 4
-Name: Play a Sound onTrigger in Unity
-Author: Nicholai Cascio
-Posted: 08/08/2017
-URL: https://www.youtube.com/watch?v=oRogSqp2rPg
-Use: Trigger death noise when falling
 

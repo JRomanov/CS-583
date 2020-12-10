@@ -218,6 +218,11 @@ public class BallController : MonoBehaviour
             timeRemaining += 30f;
             Destroy(collision.gameObject);
         }
+
+        if(collision.tag == "noise")
+        {
+            collision.GetComponent<AudioSource>().Play();
+        }
     }
 
     //Collision Tracker --> Enemies/Obstacles/Restarts
