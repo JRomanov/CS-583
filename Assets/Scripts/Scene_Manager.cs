@@ -187,6 +187,7 @@ public class Scene_Manager : MonoBehaviour
             CreditsButton.onClick.AddListener(() => LoadScene(8));
             Restart = GameObject.FindGameObjectWithTag("Restart").GetComponent<Button>();
             Restart.onClick.AddListener(() => LoadScene(3));
+            Destroy(BallInst);
         }
         //credits screen
         if (level == 8)

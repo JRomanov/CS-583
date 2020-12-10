@@ -41,7 +41,7 @@ public class BallController : MonoBehaviour
     public float fall2 = 0;
     public float fall3 = 0;
 
-    public bool gameOver = false;
+    public bool gameOver;
 
     public float totalTC;
     public float totalBT;
@@ -140,6 +140,7 @@ public class BallController : MonoBehaviour
         }
         if (level == 3)
         {
+            gameOver = false;
             fallCtr = 0;
             fallText.text = fallCtr.ToString();
             timer.SetActive(true);
