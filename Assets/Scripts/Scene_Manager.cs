@@ -74,11 +74,11 @@ public class Scene_Manager : MonoBehaviour
             {
                 if (BallInst.GetComponent<BallController>().Paused)
                 {
-                    igMusic.Play();
+                    igMusic.UnPause();
                 }
                 else
                 {
-                    igMusic.Stop();
+                    igMusic.Pause();
                 }
             }
         }
